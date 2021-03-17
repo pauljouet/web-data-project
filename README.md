@@ -2,16 +2,18 @@
 
 Web application project that regroups in the same interface :
 
-- les stations des vélos
-- les musées
-- les bâtiments historiques dans Paris
+- bike-stations
+- museums
+- historical monuments
+
+The goal is to create a web app that can be used for green touristic tour in Paris. The users sould be able to know where to rent a bike next to them, and what are the museum and historic buildings at proximity.
 
 
-Sources utilisées :
+Used sources :
 
-- vélos api (temps réel) : http://opendata.paris.fr/api/records/1.0/search/?dataset=stations-velib-disponibilites-en-temps-reel&rows=1500
-- monuments historiques dataset : https://www.data.gouv.fr/fr/datasets/monuments-historiques-liste-des-immeubles-proteges-au-titre-des-monuments-historiques/
-- musées dataset : https://www.data.gouv.fr/fr/datasets/liste-et-localisation-des-musees-de-france/
+- bike api (real time) : http://opendata.paris.fr/api/records/1.0/search/?dataset=stations-velib-disponibilites-en-temps-reel&rows=1500
+- historical monument dataset : https://www.data.gouv.fr/fr/datasets/monuments-historiques-liste-des-immeubles-proteges-au-titre-des-monuments-historiques/
+- museums dataset : https://www.data.gouv.fr/fr/datasets/liste-et-localisation-des-musees-de-france/
 
 The goal is to get the information and to store it in knowledge base in RDF, to then call it and use it in the web application.
 
