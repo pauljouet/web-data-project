@@ -11,7 +11,7 @@ The goal is to create a web app that can be used for green touristic tour in Par
 
 The information we need from the databases are:
 
-- the geolocation of the museums, historic monuments and bike stations
+- the geolocation and adresses of the museums, historic monuments and bike stations
 - names and descriptions for the places to visit
 - number of bikes and room available for the stations
 - identifiers
