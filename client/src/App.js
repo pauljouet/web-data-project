@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {Component} from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {HistoricalBuilding} from './components'
+
+const historicalBuildingTest={
+  _id:"123",
+  name: "Super immeuble qui tue sa mère",
+  address: "12 Boulevard du Général de Gaule",
+  city : "Paris",
+  description : "Un immeuble ultra boosté qui tue sa mère"
+
+}
+
+class App extends Component {
+
+  render () {
+    const {_id, name, address, city, description}= historicalBuildingTest
+    return (
+      <div>
+          <HistoricalBuilding 
+              _id={_id}
+              name={name}
+              address={address}
+              city={city}
+              description={description}
+          />
+      </div>
+    
+
+    ) 
+  }
 }
 
 export default App;
