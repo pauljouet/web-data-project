@@ -55,7 +55,13 @@
         <DataProperty IRI="#hasName"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#monument1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#station1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#station2"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#BikeStation"/>
@@ -141,6 +147,91 @@
         <Class IRI="#Station"/>
         <Class IRI="#VisitPlace"/>
     </DisjointClasses>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasAdress"/>
+        <NamedIndividual IRI="#monument1"/>
+        <Literal>Blomac</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription"/>
+        <NamedIndividual IRI="#monument1"/>
+        <Literal>Eglise mentionnée en 1251. Elle était à la collation de l&apos;évêque de Carcassonne. Elle se compose d&apos;une abside demi-circulaire (11e ou début du 12e siècle), d&apos;un choeur voûté (12e siècle) accosté de chapelles à berceaux transversaux (fin 12e - début 13e siècle), d&apos;une nef à quatre travées non voûtées (12e-début 13e siècle) et d&apos;un clocher-mur sur la façade occidentale. A l&apos;extérieur, le pourtour de l&apos;abside est décoré d&apos;arcatures groupées par séries de deux arcs. Ces groupes sont séparés et supportés par des lesennes. Les trois fenêtres absidiales primitives ont été modifiées et agrandies, mais les traces en sont visibles (arcatures de type lombard doubles). En 1891, la porte d&apos;entrée fut déplacée et mise sur la dernière travée. Elle devait à l&apos;origine se trouver au nord.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasID"/>
+        <NamedIndividual IRI="#monument1"/>
+        <Literal>PA00102569</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLatitude"/>
+        <NamedIndividual IRI="#monument1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">43.211552</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLongitude"/>
+        <NamedIndividual IRI="#monument1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.592592</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#monument1"/>
+        <Literal>Eglise Saint-Etienne</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasAvailableBikes"/>
+        <NamedIndividual IRI="#station1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">49</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCapacity"/>
+        <NamedIndividual IRI="#station1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">55</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasID"/>
+        <NamedIndividual IRI="#station1"/>
+        <Literal>99950133</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLatitude"/>
+        <NamedIndividual IRI="#station1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">48.85375581057431</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLongitude"/>
+        <NamedIndividual IRI="#station1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.3390958085656166</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#station1"/>
+        <Literal>André Mazet - Saint-André des Arts</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCapacity"/>
+        <NamedIndividual IRI="#station2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">21</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasID"/>
+        <NamedIndividual IRI="#station2"/>
+        <Literal>36255</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLatitude"/>
+        <NamedIndividual IRI="#station2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">48.87929591733507</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLongitude"/>
+        <NamedIndividual IRI="#station2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.3373600840568547</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#station2"/>
+        <Literal>Toudouze - Clauzel</Literal>
+    </DataPropertyAssertion>
     <SubDataPropertyOf>
         <DataProperty IRI="#hasAdress"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
