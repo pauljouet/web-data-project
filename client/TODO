@@ -1,15 +1,10 @@
 V1 :
 
-- define custom components for  museum
-- define custom components for historical building 
-- define custom components for each bike station
-
-
-display components according to the right element when clicking on it
+display components according to the right element when clicking on it (differentiate the museums/monuments/stations)
 
 store a collection of museums and historical monument in a JSON file
 
-define a cool style for the components
+define a cool style for the components with CSS
 
 put a cool title on the top of the page
 
