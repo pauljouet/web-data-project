@@ -2,17 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 
-const HistoricalBuilding= ({_id, name, address, city, description}) => (
-    <div className={`historicalBuilding ${name}`}>
+const HistoricalBuilding= ({building}) => (
+    <div className={`historicalBuilding ${building.name}`}>
         <span property="specify an RDF property">
-            <p property="specify RDF name">
-                <h3>{name}</h3>
-            </p>
+            
+             <h3 property="specify RDF name">{building.name}</h3>
+            
             <p property="specify RDF description">
-                {description}
+                {building.description}
             </p>
             <p property="specify RDF adress">
-                <em>{address}, {city}</em>
+                <em>{building.address}, {building.city}</em>
             </p>
         </span>
     </div>
@@ -20,11 +20,7 @@ const HistoricalBuilding= ({_id, name, address, city, description}) => (
 )
 
 HistoricalBuilding.propTypes={
-    _id : PropTypes.string.isRequired,
-    name : PropTypes.string.isRequired,
-    address : PropTypes.string.isRequired,
-    city : PropTypes.string.isRequired,
-    description : PropTypes.string
+    building : PropTypes.object.isRequired,
 }
 
 
