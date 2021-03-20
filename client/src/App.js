@@ -7,13 +7,6 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 
 import {HistoricalBuilding} from './components';
 
-require('dotenv').config()
-
-
-
-require('dotenv').config();
-
-
 
 // TODO utiliser des buildings récupérés du dataset
 
