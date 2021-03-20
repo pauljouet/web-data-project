@@ -1,7 +1,14 @@
 import './App.css';
-import React, {Component} from 'react'
 
-import {HistoricalBuilding} from './components'
+import {HistoricalBuilding, MapContainer} from './components'
+import React, {Component} from 'react';
+
+
+
+require('dotenv').config();
+
+
+
 
 const historicalBuildingTest={
   _id:"123",
@@ -11,6 +18,14 @@ const historicalBuildingTest={
   description : "Un immeuble ultra boosté qui tue sa mère"
 
 }
+
+
+
+
+
+
+
+
 
 class App extends Component {
 
@@ -25,11 +40,13 @@ class App extends Component {
               city={city}
               description={description}
           />
+          < MapContainer/>
       </div>
-    
-
     ) 
   }
 }
 
+
 export default App;
+
+
