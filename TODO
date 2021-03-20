@@ -1,17 +1,19 @@
-Different element to render on the page :
+V1 :
 
-first
-
-Components:
-
-- information and detail about a museum
-- information and details about an historical buildings
-- information and details about a bike station
+- define custom components for  museum
+- define custom components for historical building 
+- define custom components for each bike station
 
 
+display components according to the right element when clicking on it
 
-THE MAP :
-- the localisation of the museums in a certain area
-- the localisation of the historical buildings
-- the localisation of the bike station
+store a collection of museums and historical monument in a JSON file
 
+define a cool style for the components
+
+put a cool title on the top of the page
+
+V2 :
+
+- add a menu with a search bar
+- add the list of each element in the menu
