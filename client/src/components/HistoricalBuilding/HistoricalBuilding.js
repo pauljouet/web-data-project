@@ -6,7 +6,7 @@ const HistoricalBuilding= ({building}) => (
     <div className={`historicalBuilding ${building.name}`}>
         <span property="specify an RDF property">
             
-             <h3 property="specify RDF name">{building.name}</h3>
+             <h3 property="specify RDF name">🗽 {building.name}</h3>
             
             <p property="specify RDF description">
                 {building.description}

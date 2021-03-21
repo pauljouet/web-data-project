@@ -1,4 +1,6 @@
 import HistoricalBuilding from './HistoricalBuilding';
+import Museum from './Museum';
+import BikeStation from './BikeStation';
 
 
-export {HistoricalBuilding};
+export {HistoricalBuilding, Museum, BikeStation};

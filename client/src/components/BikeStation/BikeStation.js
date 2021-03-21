@@ -8,21 +8,19 @@ import PropTypes from 'prop-types'
 // the museum props is an object containing all information about museum
 
 const BikeStation= ({station}) => (
-    <div className={`Station ${building.name}`}>
+    <div className={`Station ${station.name}`}>
         <span property="specify an RDF property">
             
-             <h3 property="specify RDF name">{station.name}</h3>
-            
-            <p property="specify RDF description">
-                {station.description}
-            </p>
+             <h3 property="specify RDF name">🚲 {station.name}</h3>
+
             <p property="Specify RDF specs">
-                Number of available bikes : {station.availableBikes}
-                Number of free slots : {station.freeSlots}
+
+                <li>Number of available bikes : {station.availableBikes}</li>
+                <li>Number of free slots : {station.freeSlots}</li>
             </p>
 
             <p property="specify RDF adress">
-                <em>{museum.address}, {museum.city}</em>
+                <em>{station.address}, {station.city}</em>
             </p>
 
         </span>
