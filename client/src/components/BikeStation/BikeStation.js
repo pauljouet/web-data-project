@@ -1,3 +1,5 @@
+import './BikeStation.css'
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -8,15 +10,15 @@ import PropTypes from 'prop-types'
 // the museum props is an object containing all information about museum
 
 const BikeStation= ({station}) => (
-    <div className={`Station ${station.name}`}>
+    <div className="bikeStation-container">
         <span property="specify an RDF property">
             
              <h3 property="specify RDF name">🚲 {station.name}</h3>
 
             <p property="Specify RDF specs">
 
-                <li>Number of available bikes : {station.availableBikes}</li>
-                <li>Number of free slots : {station.freeSlots}</li>
+                <li>Number of available bikes : <em>{station.availableBikes}</em></li>
+                <li>Number of free slots : <em>{station.freeSlots}</em></li>
             </p>
 
             <p property="specify RDF adress">

@@ -1,9 +1,11 @@
+import './HistoricalBuilding.css'
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
 
 const HistoricalBuilding= ({building}) => (
-    <div className={`historicalBuilding ${building.name}`}>
+    <div className="historicalBuilding-container">
         <span property="specify an RDF property">
             
              <h3 property="specify RDF name">🗽 {building.name}</h3>

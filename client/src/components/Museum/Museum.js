@@ -1,3 +1,5 @@
+import './Museum.css'
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -8,7 +10,7 @@ import PropTypes from 'prop-types'
 // the museum props is an object containing all information about museum
 
 const Museum= ({museum}) => (
-    <div className={`Museum ${museum.name}`}>
+    <div className="museum-container">
         <span property="specify an RDF property">
             
              <h3 property="specify RDF name">🏛 {museum.name}</h3>
@@ -17,9 +19,9 @@ const Museum= ({museum}) => (
                 {museum.description}
             </p>
             <p property="specify RDF adress">
-            <li><em>{museum.address}, {museum.city}</em></li>
+                <li>Adresse : <em>{museum.address}, {museum.city}</em></li>
 
-                <li>{'\n'}Horaire d'ouvertures : <em>{museum.openingTime}</em></li>
+                <li>Horaire d'ouvertures : <em>{museum.openingTime}</em></li>
             </p>
 
         </span>
