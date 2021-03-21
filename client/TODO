@@ -1,12 +1,9 @@
 V1 :
 
-display components according to the right element when clicking on it (differentiate the museums/monuments/stations)
-
 store a collection of museums and historical monument in a JSON file
 
-define a cool style for the components with CSS
+define a cool style for the components with CSS (done but can always be improved)
 
-put a cool title on the top of the page
 
 V2 :
 
