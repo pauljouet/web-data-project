@@ -63,6 +63,10 @@ export default function App() {
 
   return (
     <div>
+    <div className="App-header">
+      <h1>Bike Touristic Tour</h1>
+    </div>
+    <div>
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -119,6 +123,7 @@ export default function App() {
       </ReactMapGL>
 
     </div>
+  </div>
   );
 }
 
