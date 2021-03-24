@@ -37,6 +37,9 @@
         <DataProperty IRI="#hasAvailableBikes"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasAvailableDocks"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#hasCapacity"/>
     </Declaration>
     <Declaration>
@@ -55,6 +58,9 @@
         <DataProperty IRI="#hasName"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasWebsite"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#monument1"/>
     </Declaration>
     <Declaration>
@@ -62,6 +68,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#station2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#station3"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#BikeStation"/>
@@ -71,6 +80,13 @@
         <Class IRI="#BikeStation"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#hasAvailableBikes"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BikeStation"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasAvailableDocks"/>
             <Datatype abbreviatedIRI="xsd:int"/>
         </DataSomeValuesFrom>
     </SubClassOf>
@@ -88,6 +104,13 @@
     <SubClassOf>
         <Class IRI="#Museum"/>
         <Class IRI="#VisitPlace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Museum"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasWebsite"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Place"/>
@@ -232,12 +255,21 @@
         <NamedIndividual IRI="#station2"/>
         <Literal>Toudouze - Clauzel</Literal>
     </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasID"/>
+        <NamedIndividual IRI="#station3"/>
+        <Literal>99950133</Literal>
+    </DataPropertyAssertion>
     <SubDataPropertyOf>
         <DataProperty IRI="#hasAdress"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#hasAvailableBikes"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasAvailableDocks"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
@@ -264,11 +296,18 @@
         <DataProperty IRI="#hasName"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasWebsite"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
     <FunctionalDataProperty>
         <DataProperty IRI="#hasAdress"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#hasAvailableBikes"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasAvailableDocks"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#hasCapacity"/>
@@ -287,6 +326,9 @@
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#hasName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasWebsite"/>
     </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#hasAdress"/>
@@ -294,6 +336,10 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasAvailableBikes"/>
+        <Class IRI="#BikeStation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAvailableDocks"/>
         <Class IRI="#BikeStation"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -320,12 +366,20 @@
         <DataProperty IRI="#hasName"/>
         <Class IRI="#Place"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasWebsite"/>
+        <Class IRI="#Museum"/>
+    </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#hasAdress"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasAvailableBikes"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAvailableDocks"/>
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -352,6 +406,14 @@
         <DataProperty IRI="#hasName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasWebsite"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <HasKey>
+        <Class IRI="#Place"/>
+        <DataProperty IRI="#hasID"/>
+    </HasKey>
 </Ontology>
 
 
