@@ -1,0 +1,1 @@
+# API flask to access the server with the client JS code
