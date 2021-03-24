@@ -3,25 +3,15 @@
 
 import json
 import requests
-from rdflib import Graph, Namespace, BNode
 
-ns = Namespace("http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#")
+ns = "http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#"
 url_velib1 = "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/station_information.json"
 url_velib2 = "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/station_status.json"
-context = """
-"@context": {
- "@vocab": "http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#",
- "station_id" : "hasID",
- "lat": "hasLatitude",
- "lon": "hasLongitude",
- "capacity": "hasCapacity",
- "name": "hasName",
-  "lastUpdatedOther": null,
-  "ttl": null,
- "stationCode": null},
- """
 
 def mapStationStatus():
+    """
+        Creates a JSON-LD file in the datasets folder with the latest infos on the velib stations
+    """
     rep = requests.get(url_velib1)
     data = rep.json()
     stations = data["data"]["stations"]
@@ -34,17 +24,14 @@ def mapStationStatus():
         station.pop('stationCode', None)
         station.pop('rental_methods', None)
 
-    for i in range(10):
-        print(stations[i])
+    #for i in range(10):
+    #    print(stations[i])
 
-    data = {"@context": {"@vocab": "http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#"}, "stations": stations}
+    data = {"@context": {"@vocab": ns}, "stations": stations}
 
-    with open('test-station-format.json', 'w') as outfile:
+    with open('server/fuseki-managements/datasets/station-info.jsonld', 'w') as outfile:
         json.dump(data, outfile)
 
-    return stations
 
-
-
-mapStationStatus()
-createTriples()
+if __name__ == "__main__":
+    mapStationStatus()
