@@ -7,8 +7,9 @@ import requests
 ns = "http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#"
 url_velib1 = "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/station_information.json"
 url_velib2 = "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/station_status.json"
+station_json1 = "server/fuseki-managements/datasets/station-info.jsonld"
 
-def mapStationStatus():
+def mapStationStatus(storeFile):
     """
         Creates a JSON-LD file in the datasets folder with the latest infos on the velib stations
     """
@@ -29,9 +30,9 @@ def mapStationStatus():
 
     data = {"@context": {"@vocab": ns}, "stations": stations}
 
-    with open('server/fuseki-managements/datasets/station-info.jsonld', 'w') as outfile:
+    with open(storeFile, 'w') as outfile:
         json.dump(data, outfile)
 
 
 if __name__ == "__main__":
-    mapStationStatus()
+    mapStationStatus(station_json1)

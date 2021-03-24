@@ -1,0 +1,21 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ns: <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#>
+
+SELECT ?s ?ca ?ad ?ab ?a ?id ?name ?addr ?lat ?long 
+WHERE {
+  GRAPH ?g
+  {
+  	    ?s rdf:type ns:BikeStation .
+        ?s ns:hasCapacity ?ca .
+        ?s ns:hasAvailableDocks ?ad .
+        ?s ns:hasAvailableBikes ?ab
+        ?s ns:hasAdress ?a .
+        ?s ns:hasID ?id .
+        ?s ns:hasName ?name .
+        ?s ns:hasLatitude ?lat .
+        ?s ns:hasLongitude ?long .
+  }
+}
