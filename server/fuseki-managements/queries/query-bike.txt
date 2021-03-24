@@ -11,7 +11,7 @@ WHERE {
   	    ?s rdf:type ns:BikeStation .
         ?s ns:hasCapacity ?ca .
         ?s ns:hasAvailableDocks ?ad .
-        ?s ns:hasAvailableBikes ?ab
+        ?s ns:hasAvailableBikes ?ab .
         ?s ns:hasAdress ?a .
         ?s ns:hasID ?id .
         ?s ns:hasName ?name .

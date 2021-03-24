@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from rdflib import Graph, URIRef
-from rdflib.plugin import *
+import rdflib.plugin
 import requests
 from rdflib.plugins.stores import sparqlstore
 
@@ -18,6 +18,8 @@ HEADERS_UPDATE = {'Content-type': 'application/sparql-update'}
 queries_folder = "server/fuseki-managements/queries/"
 station_json1 = "server/fuseki-managements/datasets/station-info.jsonld"
 
+
+# query to delete all the rows in the knowledge base
 def deleteQuery():
     """
         Returns a string with a query deleting all triples in the KB
