@@ -39,7 +39,7 @@ ja:RDFDatasetZero  rdfs:subClassOf  ja:RDFDataset .
 
 :tdb_dataset_readwrite
         a             tdb:DatasetTDB ;
-        tdb:location  "D:\\Paul Jouet\\Documents\\ESILV\\S8\\Web datamining & semantics\\apache-jena-fuseki-3.17.0\\run/databases/webdata-project-kb" .
+        tdb:location  "../fuseki/run/databases/webdata-project-kb" .
 
 <http://jena.apache.org/2016/tdb#GraphTDB>
         rdfs:subClassOf  ja:Model .
