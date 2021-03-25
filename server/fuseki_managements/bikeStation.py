@@ -6,8 +6,8 @@
 # must use the biek station APIs to get real time data
 
 
-from manage_fuseki import deleteDefaultGraph, insertOntology, insertEntries, queryFromFile
-from get_data import mapStationStatus
+from fuseki_managements.manage_fuseki import deleteDefaultGraph, insertOntology, insertEntries, queryFromFile
+from fuseki_managements.get_data import mapStation
 import os
 import requests
 
@@ -92,6 +92,10 @@ def updateStationsDatav2():
     for station in stations:
         pass
 
+
+def getStationsData():
+    data=queryFromFile('get-stations.txt')
+    return data
 
 if __name__ == "__main__":
     #updateStationsData()
