@@ -38,6 +38,8 @@ def getStationsData():
     return bikeStation
 
 
+
+
 if __name__ == "__main__":
     updateStationsData()
 
