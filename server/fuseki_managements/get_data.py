@@ -95,6 +95,6 @@ def mapMonument(storeFile):
         json.dump(data, outfile)
 
 
-#if __name__ == "__main__":
+if __name__ == "__main__":
     #mapMonument(monument_json)
     #mapStation(station_json)

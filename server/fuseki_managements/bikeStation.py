@@ -92,10 +92,22 @@ def updateStationsDatav2():
     for station in stations:
         pass
 
+# format stations data gotten from triplestore
+def formatData(data):
+    for key in data.keys():
+        data[key]=data[key]["value"]
+    data["lat"]=float(data["lat"])
+    data["lon"]=float(data["lon"])
+    data["type"]="bikeStation"
+    return data
+
 
 def getStationsData():
-    data=queryFromFile('get-stations.txt')
-    return data
+    # TODO update station data before query
+    stations=queryFromFile('get-stations.txt')
+    for station in station:
+        station=formatData(station)
+    return stations
 
 if __name__ == "__main__":
     #updateStationsData()

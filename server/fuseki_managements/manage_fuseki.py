@@ -117,4 +117,5 @@ def main():
     
 
 if __name__ == "__main__":
-    main()
+    insertEntries(station_json)
+    # main()
