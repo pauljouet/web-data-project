@@ -4,29 +4,24 @@
 
 
 from fuseki_managements.manage_fuseki import deleteDefaultGraph, insertOntology, insertEntries, queryFromFile
-from fuseki_managements.get_data import mapStationStatus
+from fuseki_managements.get_data import mapStationStatus, mapStationInfo
 
-storeFile1 = "./datasets/station-info.jsonld"
-
+storeFileInfo = "./datasets/station-info.jsonld"
+storeFileStatus = "./datasets/station-status.jsonld"
 queryfile="./queries/query-bike.txt"
 
 
 # delete all bikeStations and replace them with new real time information from the API
 def updateStationsData():
-
-
     deleteDefaultGraph()
     insertOntology()
     # fetch station data from 1st velib API and put it in a json ld
-    mapStationStatus(storeFile1)
-
+    mapStationStatus(storeFileStatus)
     #fetch station data from 2nd velib API and put it in a json ld
-    # mapStationFunction 
-
-    # store the jsonfile into the triple store
+    mapStationInfo(storeFileInfo)
+    # store the jsonfiles into the triple store
     insertEntries(storeFile1)
-
-
+    insertEntries(storeFile2)
 
 
 
