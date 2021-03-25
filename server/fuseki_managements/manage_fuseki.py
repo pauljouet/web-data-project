@@ -71,11 +71,6 @@ def queryFromFile(filename):
     return data["results"]["bindings"]
 
 
-# format data sent back by the fuseki server
-def formatData(data):
-    for key in data.keys():
-        data[key]=data[key]["value"]
-    return data
 
 def deleteDefaultGraph():
     """

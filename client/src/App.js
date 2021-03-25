@@ -3,14 +3,16 @@ import './App.css';
 import React from 'react';
 import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
-
-
 import { HistoricalBuilding, Museum, BikeStation } from './components';
+const data = require('./Data')
+
+
+
 
 
 // TODO utiliser des buildings récupérés du dataset
 
-const elements = [{
+const tqt = [{
   _id: "123",
   type:"Historical monument",
   name: "Super immeuble qui tue sa mère",
@@ -58,6 +60,9 @@ export default function App() {
     zoom: 12
   });
 
+  const elements = data.fetchMonument()
+
+  
   //state to keep in memory the clicked elements and change when needed
   const [selectedElement, setSelectedElement] = useState(null)
 
@@ -76,9 +81,9 @@ export default function App() {
         {elements.map(element => (
 
           <Marker
-            key={element._id}
-            latitude={element.latitude}
-            longitude={element.longitude}
+            key={element.id}
+            latitude={element.lat}
+            longitude={element.lon}
           >
             <button
               className="marker-btn"
@@ -87,7 +92,7 @@ export default function App() {
                 setSelectedElement(element)
               }}
             >
-              {element.type ==="Historical monument" ?
+              {element.type ==="monument" ?
                 <img src="/monument.svg" alt="Monument Icon" />
                  : (element.type ==="Museum" ?
                  <img src="/museum.svg" alt="Museum Icon" />
