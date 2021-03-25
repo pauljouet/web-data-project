@@ -4,6 +4,7 @@ from flask import request, jsonify
 from flask_cors import CORS
 from flask_restful import Resource, Api, reqparse
 from fuseki_managements.bikeStation import getStationsData
+from fuseki_managements.monument import getMonumentData
 # import functions to get stations
 # import functions to get museums
 # import functions to get monument
@@ -38,7 +39,7 @@ def museums():
 # endpoint to get monuments
 @app.route('/api/monuments', methods=['GET'])
 def monuments():
-    monuments=functionGetMonuments()
+    monuments=getMonumentData()
     return jsonify(monuments)
 
 

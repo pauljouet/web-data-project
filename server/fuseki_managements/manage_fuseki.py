@@ -69,6 +69,8 @@ def queryFromFile(filename):
     data = rep.json()
     return data["results"]["bindings"]
 
+
+
 def deleteDefaultGraph():
     """
         Deletes all triples in the default graph
