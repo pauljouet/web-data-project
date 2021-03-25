@@ -1,9 +1,9 @@
 import './App.css';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
-import { HistoricalBuilding, Museum, BikeStation } from './components';
+import { Monument, Museum, BikeStation } from './components';
 const data = require('./Data')
 
 
@@ -60,11 +60,18 @@ export default function App() {
     zoom: 12
   });
 
-  const elements = data.fetchMonument()
+  const [elements, setElements] =  useState([]);
+
+  useEffect( async ()=>{
+      const items= await data.fetchMonument()
+      setElements(items)
+  }, []);
 
   
   //state to keep in memory the clicked elements and change when needed
   const [selectedElement, setSelectedElement] = useState(null)
+
+
 
   return (
     <div>
@@ -106,16 +113,16 @@ export default function App() {
         ))}
         {selectedElement ? (
           <Popup
-            latitude={selectedElement.latitude}
-            longitude={selectedElement.longitude}
+            latitude={selectedElement.lat}
+            longitude={selectedElement.lon}
             onClose={() => {
               setSelectedElement(null);
             }}
           >
             <div>
-              {selectedElement.type ==="Historical monument" ?
-                <HistoricalBuilding
-                  building={selectedElement}
+              {selectedElement.type ==="monument" ?
+                <Monument
+                  monument={selectedElement}
                 /> : (selectedElement.type ==="Museum" ?
                   <Museum museum={selectedElement} />
                   : <BikeStation station={selectedElement} />)
