@@ -15,8 +15,8 @@ GRAPH_STORE = DATASET_URL + "/data"
 HEADERS_QUERY = {'Content-type': 'application/sparql-query'}
 HEADERS_UPDATE = {'Content-type': 'application/sparql-update'}
 
-queries_folder = "server/fuseki-managements/queries/"
-station_json1 = "server/fuseki-managements/datasets/station-info.jsonld"
+queries_folder = "./queries/"
+station_json1 = "../fuseki-managements/datasets/station-info.jsonld"
 
 
 # query to delete all the rows in the knowledge base
@@ -86,16 +86,20 @@ def insertEntries(filename):
     r = requests.post(GRAPH_STORE + '?default', data=data, headers=headers)
     if r.status_code != 204:
         r.raise_for_status()
+    else:
+        print("Status response",r)
 
 def insertOntology():
     """
         Inserts the ontology into the default graph in Fuseki
     """
-    data = open("server/ontology/project-ontology.ttl").read()
+    data = open("../ontology/project-ontology.ttl").read()
     headers = {'Content-Type': 'text/turtle'}
     r = requests.post(GRAPH_STORE + '?default', data=data, headers=headers)
     if r.status_code != 204:
         r.raise_for_status()
+    else:
+        print("Status response",r)
 
 def main():
     deleteDefaultGraph()

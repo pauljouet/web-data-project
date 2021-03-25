@@ -3,6 +3,7 @@ from flask import Flask
 from flask import request, jsonify
 from flask_cors import CORS
 from flask_restful import Resource, Api, reqparse
+from fuseki_managements.bikeStation import getStationsData
 # import functions to get stations
 # import functions to get museums
 # import functions to get monument
@@ -23,8 +24,9 @@ def home():
 @app.route('/api/stations', methods=['GET'])
 def stations():
     # functionGetStation returns the structured array of stations from triplestor
-    stations= functionGetStation()
+    stations = getStationsData()
     return jsonify(stations)
+
 
 
 # endpoint to get museums
