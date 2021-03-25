@@ -60,7 +60,7 @@ def queryFromFile(filename):
         Asks the server (Fuseki triplestore) using a .txt file containing a SPARQL query
         Input: query file path
     """
-    with open(filename, 'r') as query:
+    with open(os.path.join(os.path.dirname(__file__), "./queries/") + filename, 'r') as query:
         queryString = "".join(query.readlines())
     print(queryString)
     
@@ -68,8 +68,7 @@ def queryFromFile(filename):
     if rep.status_code != 200:
         rep.raise_for_status()
     data = rep.json()
-    for triple in data["results"]["bindings"]:
-        print(triple)
+    return data["results"]["bindings"]
 
 def deleteDefaultGraph():
     """
@@ -106,11 +105,15 @@ def insertOntology():
 
 def main():
     #deleteDefaultGraph()
-    insertOntology()
-    insertEntries(station_json1)
-    insertEntries(station_json2)
+    #insertOntology()
+    #insertEntries(station_json1)
+    #insertEntries(station_json2)
     #insertEntries(monument_json)
     #queryFromFile(queries_folder + "get-graph-names.txt")
+    monuments= queryFromFile("get-monuments.txt")
+    for i in range(10):
+        print(monuments[i])
+        print(monuments[i]['lat']['value'])
     
 
 if __name__ == "__main__":
