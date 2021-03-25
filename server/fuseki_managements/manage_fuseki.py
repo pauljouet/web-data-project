@@ -5,6 +5,7 @@ from rdflib import Graph, URIRef
 import rdflib.plugin
 import requests
 from rdflib.plugins.stores import sparqlstore
+import os
 
 SERVER_URL = "http://localhost:3030"
 DATASET_URL = SERVER_URL + "/webdata-project-kb"
@@ -15,9 +16,11 @@ GRAPH_STORE = DATASET_URL + "/data"
 HEADERS_QUERY = {'Content-type': 'application/sparql-query'}
 HEADERS_UPDATE = {'Content-type': 'application/sparql-update'}
 
-queries_folder = "./queries/"
-station_json1 = "../fuseki-managements/datasets/station-info.jsonld"
-
+queries_folder = os.path.join(os.path.dirname(__file__), "./queries/")
+station_json1 = os.path.join(os.path.dirname(__file__), "./datasets/station-info.jsonld")
+station_json2 = os.path.join(os.path.dirname(__file__), "./datasets/station-status.jsonld")
+monument_json = os.path.join(os.path.dirname(__file__), "./datasets/monuments.jsonld")
+loc_ontology = os.path.join(os.path.dirname(__file__), "../ontology/project-ontology.ttl")
 
 # query to delete all the rows in the knowledge base
 def deleteQuery():
@@ -93,7 +96,7 @@ def insertOntology():
     """
         Inserts the ontology into the default graph in Fuseki
     """
-    data = open("../ontology/project-ontology.ttl").read()
+    data = open(loc_ontology).read()
     headers = {'Content-Type': 'text/turtle'}
     r = requests.post(GRAPH_STORE + '?default', data=data, headers=headers)
     if r.status_code != 204:
@@ -102,9 +105,11 @@ def insertOntology():
         print("Status response",r)
 
 def main():
-    deleteDefaultGraph()
+    #deleteDefaultGraph()
     insertOntology()
     insertEntries(station_json1)
+    insertEntries(station_json2)
+    #insertEntries(monument_json)
     #queryFromFile(queries_folder + "get-graph-names.txt")
     
 
