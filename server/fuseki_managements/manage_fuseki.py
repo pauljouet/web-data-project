@@ -17,8 +17,7 @@ HEADERS_QUERY = {'Content-type': 'application/sparql-query'}
 HEADERS_UPDATE = {'Content-type': 'application/sparql-update'}
 
 queries_folder = os.path.join(os.path.dirname(__file__), "./queries/")
-station_json1 = os.path.join(os.path.dirname(__file__), "./datasets/station-info.jsonld")
-station_json2 = os.path.join(os.path.dirname(__file__), "./datasets/station-status.jsonld")
+station_json = os.path.join(os.path.dirname(__file__), "./datasets/stations.jsonld")
 monument_json = os.path.join(os.path.dirname(__file__), "./datasets/monuments.jsonld")
 loc_ontology = os.path.join(os.path.dirname(__file__), "../ontology/project-ontology.ttl")
 
@@ -106,11 +105,10 @@ def insertOntology():
 def main():
     #deleteDefaultGraph()
     #insertOntology()
-    #insertEntries(station_json1)
-    #insertEntries(station_json2)
     #insertEntries(monument_json)
+    #insertEntries(station_json)
     #queryFromFile(queries_folder + "get-graph-names.txt")
-    monuments= queryFromFile("get-monuments.txt")
+    monuments= queryFromFile("get-stations.txt")
     for i in range(10):
         print(monuments[i])
         print(monuments[i]['lat']['value'])

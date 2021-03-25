@@ -9,17 +9,20 @@ ns = "http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#"
 url_velib1 = "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/station_information.json"
 url_velib2 = "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/station_status.json"
 url_monuments = "https://www.data.gouv.fr/fr/datasets/r/0dca8af6-fb5e-42d8-970f-2b369fe7e421"
-station_json1 = os.path.join(os.path.dirname(__file__), "./datasets/station-info.jsonld")
-station_json2 = os.path.join(os.path.dirname(__file__), "./datasets/station-status.jsonld")
+station_json = os.path.join(os.path.dirname(__file__), "./datasets/stations.jsonld")
 monument_json = os.path.join(os.path.dirname(__file__), "./datasets/monuments.jsonld")
 
-def mapStationInfo(storeFile):
+def mapStation(storeFile):
     """
         Creates a JSON-LD file in the datasets folder with the latest infos on the velib stations
     """
     rep = requests.get(url_velib1)
+    rep2 = requests.get(url_velib2)
     data = rep.json()
+    data2 = rep2.json()
     stations = data["data"]["stations"]
+    stations2 = data2["data"]["stations"]
+
     for station in stations:
         station['hasID'] = station.pop('station_id')
         station['hasName'] = station.pop('name')
@@ -28,27 +31,10 @@ def mapStationInfo(storeFile):
         station['hasCapacity'] = station.pop('capacity')
         station.pop('stationCode', None)
         station.pop('rental_methods', None)
-
-    #for i in range(10):
-    #    print(stations[i])
-
-    data = {"@context": {"@vocab": ns}, "stations": stations}
-
-    with open(storeFile, 'w') as outfile:
-        json.dump(data, outfile)
-
-    
-def mapStationStatus(storeFile):
-    """
-        Creates a JSON-LD file in the datasets folder with the latest status on the velib stations
-    """
-    rep = requests.get(url_velib2)
-    data = rep.json()
-    stations = data["data"]["stations"]
-    
-    for station in stations:
-        station['hasID'] = station.pop('station_id')
-        station['hasAvailableBikes'] = station.pop('num_bikes_available')
+        
+    for station in stations2:
+        station['hasID'] = station.pop('station_id', None)
+        station['hasAvailableBikes'] = station.pop('num_bikes_available', None)
         station['hasAvailableDocks']= station.pop('num_docks_available', None)
         station.pop('stationCode', None)
         station.pop('numBikesAvailable', None)
@@ -59,11 +45,17 @@ def mapStationStatus(storeFile):
         station.pop('is_renting', None)
         station.pop('last_reported', None)
 
+    stations_merged = []
+    for i in range(len(stations)):
+        if stations[i]['hasID'] == stations2[i]['hasID']:
+            stations_merged.append({**stations[i], **stations2[i]})
 
-    #for i in range(10):
-    #    print(stations[i])
+    print(len(stations), len(stations_merged))
 
-    data = {"@context": {"@vocab": ns}, "stations": stations}
+    for i in range(10):
+        print(stations_merged[i])
+
+    data = {"@context": {"@vocab": ns}, "stations": stations_merged}
 
     with open(storeFile, 'w') as outfile:
         json.dump(data, outfile)
@@ -103,6 +95,5 @@ def mapMonument(storeFile):
         json.dump(data, outfile)
 
 if __name__ == "__main__":
-    mapStationInfo(station_json1)
-    mapStationStatus(station_json2)
-    mapMonument(monument_json)
+    #mapMonument(monument_json)
+    #mapStation(station_json)
