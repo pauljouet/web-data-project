@@ -5,6 +5,7 @@ from flask_cors import CORS
 from flask_restful import Resource, Api, reqparse
 from fuseki_managements.bikeStation import getStationsData
 from fuseki_managements.monument import getMonumentData
+from fuseki_managements.manage_fuseki import deleteDefaultGraph
 # import functions to get stations
 # import functions to get museums
 # import functions to get monument
@@ -42,6 +43,12 @@ def monuments():
     monuments=getMonumentData()
     return jsonify(monuments)
 
+
+# endpoint to get monuments
+@app.route('/api/deleteAll', methods=['GET'])
+def monuments():
+    rep=deleteDefaultGraph()
+    return jsonify(rep)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80, debug=True)
