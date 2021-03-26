@@ -2,6 +2,7 @@
 # use the manage.py functions
 from fuseki_managements.manage_fuseki import deleteDefaultGraph, insertOntology, insertEntries, queryFromFile
 from fuseki_managements.get_data import mapMonument
+import os
 
 
 queryfile='get-monuments.txt'

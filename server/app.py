@@ -44,11 +44,5 @@ def monuments():
     return jsonify(monuments)
 
 
-# endpoint to get monuments
-@app.route('/api/deleteAll', methods=['GET'])
-def monuments():
-    rep=deleteDefaultGraph()
-    return jsonify(rep)
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80, debug=True)
