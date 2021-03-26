@@ -139,8 +139,8 @@ def mapMusees(filename):
     return good_musees
 
 if __name__ == "__main__":
-    #mapMonument(monument_json)
-    #mapStation(station_json)
-    #mapMusees(musees_json)
+    mapMonument(monument_json)
+    mapStation(station_json)
+    mapMusees(musees_json)
     pass
 

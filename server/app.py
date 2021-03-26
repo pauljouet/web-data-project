@@ -29,7 +29,6 @@ def stations():
     return jsonify(stations)
 
 
-
 # endpoint to get museums
 @app.route('/api/museums', methods=['GET'])
 def museums():

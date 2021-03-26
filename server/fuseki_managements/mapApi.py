@@ -5,7 +5,8 @@ from pathlib import Path  # Python 3.6+ only
 env_path = Path('.') / '.env'
 
 load_dotenv(dotenv_path=env_path)
-MAPS_API_KEY=os.getenv("MAPS_API_KEY")
+#MAPS_API_KEY=os.getenv("MAPS_API_KEY")
+MAPS_API_KEY="AIzaSyDirZ761X3x_Xpg2pGzCjIbWJ34eFpRjhM"
 
 # Convert string to location
 def getCoordinates(location):
