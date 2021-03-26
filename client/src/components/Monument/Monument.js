@@ -6,14 +6,12 @@ import PropTypes from 'prop-types'
 
 const Monument= ({monument}) => (
     <div className="monument-container">
-        <span property="specify an RDF property">
-            
-             <h3 property="specify RDF name">🗽 {monument.name}</h3>
-            
-            <p property="specify RDF description">
+        <span >     
+             <h3 property="ns:hasName">🗽 {monument.name}</h3>        
+            <p property="ns:hasDescription">
                 {monument.descr}
             </p>
-            <p property="specify RDF adress">
+            <p property="ns:hasCity">
                 <em>{monument.city}</em>
             </p>
         </span>
