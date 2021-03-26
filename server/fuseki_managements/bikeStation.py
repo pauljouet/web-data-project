@@ -106,7 +106,7 @@ def formatData(data):
 def getStationsData():
     # TODO update station data before query
     stations=queryFromFile('get-stations.txt')
-    for station in station:
+    for station in stations:
         station=formatData(station)
     return stations
 
