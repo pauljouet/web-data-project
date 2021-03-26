@@ -59,14 +59,18 @@ def queryFromFile(filename):
         Asks the server (Fuseki triplestore) using a .txt file containing a SPARQL query
         Input: query file path
     """
+    print("Opening query file")
     with open(os.path.join(os.path.dirname(__file__), "./queries/") + filename, 'r') as query:
         queryString = "".join(query.readlines())
-    print(queryString)
+    print("Query :\n", queryString)
+
     
     rep = requests.post(DATASET_URL, data=queryString, headers=HEADERS_QUERY)
+    print("Posted request.")
     if rep.status_code != 200:
         rep.raise_for_status()
     data = rep.json()
+    print("Got results")
     return data["results"]["bindings"]
 
 
@@ -119,5 +123,4 @@ def main():
     
 
 if __name__ == "__main__":
-    insertEntries(station_json)
-    # main()
+    main()
