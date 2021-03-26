@@ -11,18 +11,14 @@ import PropTypes from 'prop-types'
 
 const BikeStation= ({station}) => (
     <div className="bikeStation-container">
-        <span property="specify an RDF property">
+        <span>
             
-             <h3 property="specify RDF name">🚲 {station.name}</h3>
+             <h3 property="ns:hasName">🚲 {station.name}</h3>
 
-            <p property="Specify RDF specs">
-
-                <li>Number of available bikes : <em>{station.availableBikes}</em></li>
-                <li>Number of free slots : <em>{station.freeSlots}</em></li>
-            </p>
-
-            <p property="specify RDF adress">
-                <em>{station.address}, {station.city}</em>
+            <p>
+                <li>Total bike capacity : <em property="ns:hasCapacity">{station.cap}</em></li>
+                <li>Number of available bikes : <em property="ns:hasAvailableBikes">{station.avbikes}</em></li>
+                <li>Number of free slots : <em property="ns:hasAvailableDocks">{station.avdocks}</em></li>
             </p>
 
         </span>

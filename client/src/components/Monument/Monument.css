@@ -1,6 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
-.museum-container {
+.monument-container {
     color: #566b78;
     margin: 10;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -15,4 +15,3 @@
     font-size: 2em;
     font-weight: 350;
   }
-

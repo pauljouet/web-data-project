@@ -6,8 +6,8 @@
 # must use the biek station APIs to get real time data
 
 
-from manage_fuseki import deleteDefaultGraph, insertOntology, insertEntries, queryFromFile
-from get_data import mapStationStatus
+from fuseki_managements.manage_fuseki import deleteDefaultGraph, insertOntology, insertEntries, queryFromFile
+from fuseki_managements.get_data import mapStation
 import os
 import requests
 
@@ -93,6 +93,22 @@ def deleteStationsQuery():
     """
     return deleteStations
 
+# format stations data gotten from triplestore
+def formatData(data):
+    for key in data.keys():
+        data[key]=data[key]["value"]
+    data["lat"]=float(data["lat"])
+    data["lon"]=float(data["lon"])
+    data["type"]="bikeStation"
+    return data
+
+
+def getStationsData():
+    # TODO update station data before query
+    stations=queryFromFile('get-stations.txt')
+    for station in station:
+        station=formatData(station)
+    return stations
 
 if __name__ == "__main__":
     #updateStationsData()

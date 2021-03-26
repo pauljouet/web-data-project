@@ -94,6 +94,7 @@ def mapMonument(storeFile):
     with open(storeFile, 'w') as outfile:
         json.dump(data, outfile)
 
+
 if __name__ == "__main__":
     #mapMonument(monument_json)
     #mapStation(station_json)
