@@ -1,45 +1,43 @@
 import './App.css';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+import { Monument, Museum, BikeStation,SearchBar } from './components';
+const data = require('./Data')
 
-
-import { HistoricalBuilding, Museum, BikeStation, SearchBar } from './components';
 
 
 // TODO utiliser des buildings récupérés du dataset
 
-const elements = [{
-  _id: "123",
-  type:"Historical monument",
+const tqt = [{
+  id: "123",
+  type:"monument",
   name: "Super immeuble qui tue sa mère",
-  latitude: 48.850853542905114,
-  longitude: 2.343891862961394,
-  address: "12 Boulevard du Général de Gaule",
+  lat: 48.850853542905114,
+  lon: 2.343891862961394,
   city: "Paris",
   description: "Un immeuble ultra boosté qui tue sa mère"
 }, {
-  _id: "1234",
+  id: "1234",
   type:"Museum",
   name: "Centre Pompidou",
-  latitude: 48.8611698632859, 
-  longitude: 2.351691564900129,
+  lat: 48.8611698632859, 
+  lon: 2.351691564900129,
   address: "Place George Pompidou",
   city: "Paris",
   description: "Centre d'art le plus iconique de la capitale",
-  openingTime : "9h00-17h30"
 },
 {
-  _id: "12345",
+  id: "12345",
   type:"BikeStation",
   name: "Super station",
-  latitude: 48.863358024171255, 
-  longitude: 2.335523642208444,
-  address: "Avenue de l'Opéra",
+  lat: 48.863358024171255, 
+  lon: 2.335523642208444,
   city: "Paris",
-  availableBikes: 13,
-  freeSlots:15,
+  cap:30,
+  avBikes: 13,
+  avDocks:15,
 }
 ]
 
@@ -59,8 +57,19 @@ export default function App() {
     zoom: 12
   });
 
+  const [elements, setElements] =  useState([]);
+
+  // promise.all runs the 3 fetching in parrallel to gain time
+  useEffect( ()=>{
+      Promise.all([data.fetchMonument(), data.fetchMuseum(), data.fetchStation()])
+        .then(result => setElements(result.flat()))
+  }, []);
+
+  
   //state to keep in memory the clicked elements and change when needed
   const [selectedElement, setSelectedElement] = useState(null)
+
+
 
   return (
     <div>
@@ -80,12 +89,12 @@ export default function App() {
         mapStyle="mapbox://styles/mapbox/streets-v11"
         onViewportChange={nextViewport => setViewport(nextViewport)}
       >
-        {elements.map(element => (
+        {tqt.map(element => (
 
           <Marker
-            key={element._id}
-            latitude={element.latitude}
-            longitude={element.longitude}
+            key={element.id}
+            latitude={element.lat}
+            longitude={element.lon}
           >
             <button
               className="marker-btn"
@@ -94,7 +103,7 @@ export default function App() {
                 setSelectedElement(element)
               }}
             >
-              {element.type ==="Historical monument" ?
+              {element.type ==="monument" ?
                 <img src="/monument.svg" alt="Monument Icon" />
                  : (element.type ==="Museum" ?
                  <img src="/museum.svg" alt="Museum Icon" />
@@ -108,16 +117,16 @@ export default function App() {
         ))}
         {selectedElement ? (
           <Popup
-            latitude={selectedElement.latitude}
-            longitude={selectedElement.longitude}
+            latitude={selectedElement.lat}
+            longitude={selectedElement.lon}
             onClose={() => {
               setSelectedElement(null);
             }}
           >
             <div>
-              {selectedElement.type ==="Historical monument" ?
-                <HistoricalBuilding
-                  building={selectedElement}
+              {selectedElement.type ==="monument" ?
+                <Monument
+                  monument={selectedElement}
                 /> : (selectedElement.type ==="Museum" ?
                   <Museum museum={selectedElement} />
                   : <BikeStation station={selectedElement} />)

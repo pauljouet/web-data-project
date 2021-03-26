@@ -1,7 +1,7 @@
-import HistoricalBuilding from './HistoricalBuilding';
+import Monument from './Monument';
 import Museum from './Museum';
 import BikeStation from './BikeStation';
 import SearchBar from './SearchBar'
 
 
-export {HistoricalBuilding, Museum, BikeStation, SearchBar};
+export {Monument, Museum, BikeStation, SearchBar};

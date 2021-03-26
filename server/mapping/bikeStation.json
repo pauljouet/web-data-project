@@ -1,0 +1,12 @@
+{ "@context": {
+ "@vocab": "http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project/",
+ "station_id" : "hasID",
+ "lat": "hasLatitude",
+ "lon": "hasLongitude",
+ "capacity": "hasCapacity",
+ "name": "hasName",
+  "lastUpdatedOther": null,
+  "ttl": null,
+ "stationCode": null},
+  
+  "lastUpdatedOther":1616581835,"ttl":3600,"data":{"stations":[{"station_id":213688169,"name":"Benjamin Godard - Victor Hugo","lat":48.865983,"lon":2.275725,"capacity":35,"stationCode":"16107"},{"station_id":99950133,"name":"André Mazet - Saint-André des Arts","lat":48.85375581057431,"lon":2.3390958085656166,"capacity":55,"stationCode":"6015","rental_methods":["CREDITCARD"]},{"station_id":516709288,"name":"Charonne - Robert et Sonia Delauney","lat":48.85590755596891,"lon":2.3925706744194035,"capacity":20,"stationCode":"11104"},{"station_id":36255,"name":"Toudouze - Clauzel","lat":48.87929591733507,"lon":2.3373600840568547,"capacity":21,"stationCode":"9020","rental_methods":["CREDITCARD"]}]}}

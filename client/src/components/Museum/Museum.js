@@ -11,17 +11,16 @@ import PropTypes from 'prop-types'
 
 const Museum= ({museum}) => (
     <div className="museum-container">
-        <span property="specify an RDF property">
+        <span>
             
-             <h3 property="specify RDF name">🏛 {museum.name}</h3>
+             <h3 property="ns:hasName">🏛 {museum.name}</h3>
             
-            <p property="specify RDF description">
+            <p property="ns:hasDescription">
                 {museum.description}
             </p>
-            <p property="specify RDF adress">
-                <li>Adresse : <em>{museum.address}, {museum.city}</em></li>
-
-                <li>Horaire d'ouvertures : <em>{museum.openingTime}</em></li>
+            <p>
+                Adresse : <em property="ns: hasAdress">{museum.address}</em>,
+                <em property="hasCity"> {museum.city}</em>
             </p>
 
         </span>
