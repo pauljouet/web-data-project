@@ -39,7 +39,7 @@ ja:RDFDatasetZero  rdfs:subClassOf  ja:RDFDataset .
 
 :tdb_dataset_readwrite
         a              tdb2:DatasetTDB2 ;
-        tdb2:location  "D:\\Programmation\\web-data-project\\fuseki\\run/databases/webdata-project-kb" .
+        tdb2:location  "../databases/webdata-project-kb" .
 
 tdb2:GraphTDB  rdfs:subClassOf  ja:Model .
 
