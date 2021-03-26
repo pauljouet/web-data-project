@@ -46,9 +46,12 @@ const tqt = [{
 
 export default function App() {
 
-
-  // detail for the map component
+  //state to keep in memory the clicked elements and change when needed
+  
   const [input, setInput] = useState('');
+  const [selectedElement, setSelectedElement] = useState(null)
+  const [elements, setElements] =  useState([]);
+  // detail for the map component
   const [viewport, setViewport] = useState({
     width: "100vw",
     height: "100vh",
@@ -66,9 +69,27 @@ export default function App() {
   }, []);
 
   
-  //state to keep in memory the clicked elements and change when needed
-  const [selectedElement, setSelectedElement] = useState(null)
+  
+  
+  const updateInput = async (input) => {
+    setInput(input);
+ }
 
+ const searchNearestStations = async () => {
+    const res= await fetchNearestStations(input) //input is the adress to search 
+    const lat= res.lat // the res must send the lat and long gotten from the adress sent
+    const lon=res.lon
+    setElements(stations)
+    setViewport({
+      width: "100vw",
+      height: "100vh",
+      latitude: lat,
+      longitude: lon,
+      zoom: 16
+    })
+ }
+    
+  
 
 
   return (
@@ -80,6 +101,7 @@ export default function App() {
       <SearchBar 
         input={input}
         onChange={updateInput}
+        onSubmitEditing={searchNearestStations}
       />
     </div>
     <div>
