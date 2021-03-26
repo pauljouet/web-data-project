@@ -19,6 +19,7 @@ queryfile="query-bike.txt"
 
 
 # delete all bikeStations and replace them with new real time information from the API
+# so this function works, but it is slower than removing all of the stations' data
 def updateStationsData():
     rep = requests.get("https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/station_status.json")
     data = rep.json()
@@ -62,7 +63,10 @@ def updateStationsData():
         if rep.status_code != 204:
             rep.raise_for_status()
 
-def updateStationsDatav2():
+def deleteStationsQuery():
+    """
+    Returns the query string for deleting stations from the triplestore
+    """
     deleteStations = """
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX ns: <http://http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#>
@@ -87,15 +91,11 @@ def updateStationsDatav2():
             ?s ns:hasAvailableDocks ?avdocks .
         }
     """
-    #A COMPLETEEER
-
-    for station in stations:
-        pass
+    return deleteStations
 
 
 if __name__ == "__main__":
     #updateStationsData()
-    # so this function works, but it is slower than removing all of the stations' data
     pass
 
 

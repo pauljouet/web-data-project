@@ -110,7 +110,7 @@ def main():
     #insertEntries(monument_json)
     #insertEntries(station_json)
     #queryFromFile(queries_folder + "get-graph-names.txt")
-    monuments= queryFromFile("get-stations.txt")
+    monuments= queryFromFile("get-monuments.txt")
     for i in range(10):
         print(monuments[i])
         print(monuments[i]['lat']['value'])
