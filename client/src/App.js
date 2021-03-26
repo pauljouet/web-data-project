@@ -5,7 +5,7 @@ import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 
 
-import { HistoricalBuilding, Museum, BikeStation } from './components';
+import { HistoricalBuilding, Museum, BikeStation, SearchBar } from './components';
 
 
 // TODO utiliser des buildings récupérés du dataset
@@ -50,6 +50,7 @@ export default function App() {
 
 
   // detail for the map component
+  const [input, setInput] = useState('');
   const [viewport, setViewport] = useState({
     width: "100vw",
     height: "100vh",
@@ -65,6 +66,12 @@ export default function App() {
     <div>
     <div className="App-header">
       <h1>Bike Touristic Tour</h1>
+    </div>
+    <div>
+      <SearchBar 
+        input={input}
+        onChange={updateInput}
+      />
     </div>
     <div>
       <ReactMapGL
