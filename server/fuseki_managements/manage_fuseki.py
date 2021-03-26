@@ -78,6 +78,7 @@ def deleteDefaultGraph():
     rep = requests.post(DATASET_URL, data=deleteQuery(), headers=HEADERS_UPDATE)
     if rep.status_code != 204:
         rep.raise_for_status()
+    return rep
 
 def insertEntries(filename):
     """
@@ -91,6 +92,7 @@ def insertEntries(filename):
         r.raise_for_status()
     else:
         print("Status response",r)
+    return r
 
 def insertOntology():
     """
