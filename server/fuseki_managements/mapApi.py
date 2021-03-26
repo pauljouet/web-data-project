@@ -7,15 +7,15 @@ env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 MAPS_API_KEY=os.getenv("MAPS_API_KEY")
 
-
 # Convert string to location
 def getCoordinates(location):
     url = 'https://maps.googleapis.com/maps/api/geocode/json'
     params = {'key':MAPS_API_KEY , 'address': location}
-    print(MAPS_API_KEY)
+    print("key:", MAPS_API_KEY)
     response = requests.get(url, params=params)
     # If not sucess raise error
     if response.status_code != 200:
+        print("error in status")
         response.raise_for_status()
         return (None, None)
     results = response.json()['results']
