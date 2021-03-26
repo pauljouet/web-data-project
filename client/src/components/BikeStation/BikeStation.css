@@ -2,8 +2,10 @@
 
 .bikeStation-container {
     color: #566b78;
-    margin: 0 auto;
+    margin: 30;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    height: 150;
+    width: 300;
   }
 
   
