@@ -4,17 +4,21 @@
 import json
 import requests
 import os
+import pandas as pd
+from mapApi import getCoordinates
 
 ns = "http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#"
 url_velib1 = "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/station_information.json"
 url_velib2 = "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/station_status.json"
 url_monuments = "https://www.data.gouv.fr/fr/datasets/r/0dca8af6-fb5e-42d8-970f-2b369fe7e421"
+url_musees = "https://www.data.gouv.fr/fr/datasets/r/22df4a13-72d8-4b34-940e-8aec297b5ded"
 station_json = os.path.join(os.path.dirname(__file__), "./datasets/stations.jsonld")
 monument_json = os.path.join(os.path.dirname(__file__), "./datasets/monuments.jsonld")
+musees_json = os.path.join(os.path.dirname(__file__), "./datasets/musees.jsonld")
 
 def mapStation(storeFile):
     """
-        Creates a JSON-LD file in the datasets folder with the latest infos on the velib stations
+        Creates a JSON-LD file in the datasets folder with the latest infos on the velib stations and returns list
     """
     rep = requests.get(url_velib1)
     rep2 = requests.get(url_velib2)
@@ -60,9 +64,11 @@ def mapStation(storeFile):
     with open(storeFile, 'w') as outfile:
         json.dump(data, outfile)
 
+    return stations_merged
+
 def mapMonument(storeFile):
     """
-        Creates a JSON-LD file in the datasets folder with the infos on the historical monuments
+        Creates a JSON-LD file in the datasets folder with the infos on the historical monuments and returns list
     """
     #with open('path/to/dataset') as json_file:
         #data = json.load(json_file)
@@ -93,9 +99,48 @@ def mapMonument(storeFile):
 
     with open(storeFile, 'w') as outfile:
         json.dump(data, outfile)
+    
+    return good_monuments
 
+
+def mapMusees(filename):
+    """
+        Creates a JSON-LD file in the datasets folder with the infos on the museums and returns a list of museums
+    """
+    data = pd.read_excel(url_musees) 
+    #print(data.head())
+    good_musees=[]
+    length = int(data.shape[0])
+    for i in range(length):
+        dic={} 
+        if data.iloc[i][5]:
+            abis=""
+            a = data.iloc[i][6]
+            b = data.iloc[i][8]
+            if type(a)==str and type(b)==str:
+                for letter in a:
+                    if letter != ",":
+                        abis+=letter
+                        
+                c=abis+" "+b
+                dic['hasAddress'] = c
+                dic['hasName'] = data.iloc[i][5]
+                dic['hasID'] = data.iloc[i][4]
+                
+                coord = getCoordinates(c)
+                dic['hasLatitude'] = coord[0]
+                dic['hasLongitude'] = coord[1]
+
+        good_musees.append(dic)
+    data = {"@context": {"@vocab": ns}, "musees": good_musees}
+    with open(filename, 'w') as outfile:
+        json.dump(data, outfile) 
+
+    return good_musees
 
 if __name__ == "__main__":
     #mapMonument(monument_json)
     #mapStation(station_json)
-    
+    #mapMusees(musees_json)
+    pass
+

@@ -19,6 +19,7 @@ HEADERS_UPDATE = {'Content-type': 'application/sparql-update'}
 queries_folder = os.path.join(os.path.dirname(__file__), "./queries/")
 station_json = os.path.join(os.path.dirname(__file__), "./datasets/stations.jsonld")
 monument_json = os.path.join(os.path.dirname(__file__), "./datasets/monuments.jsonld")
+musee_json = os.path.join(os.path.dirname(__file__), "./datasets/musees.jsonld")
 loc_ontology = os.path.join(os.path.dirname(__file__), "../ontology/project-ontology.ttl")
 
 # query to delete all the rows in the knowledge base
@@ -112,14 +113,15 @@ def insertOntology():
 
 def main():
     #deleteDefaultGraph()
-    #insertOntology()
-    #insertEntries(monument_json)
-    #insertEntries(station_json)
+    insertOntology()
+    insertEntries(monument_json)
+    insertEntries(musee_json)
+    insertEntries(station_json)
     #queryFromFile(queries_folder + "get-graph-names.txt")
-    monuments= queryFromFile("get-monuments.txt")
-    for i in range(10):
-        print(monuments[i])
-        print(monuments[i]['lat']['value'])
+    #monuments= queryFromFile("get-monuments.txt")
+    #for i in range(10):
+    #    print(monuments[i])
+    #    print(monuments[i]['lat']['value'])
     
 
 if __name__ == "__main__":
