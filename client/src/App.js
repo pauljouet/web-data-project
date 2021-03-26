@@ -60,9 +60,10 @@ export default function App() {
 
   const [elements, setElements] =  useState([]);
 
-  useEffect( async ()=>{
-      const items= await data.fetchMonument()
-      setElements(items)
+  // promise.all runs the 3 fetching in parrallel to gain time
+  useEffect( ()=>{
+      Promise.all([data.fetchMonument(), data.fetchMuseum(), data.fetchStation()])
+        .then(result => setElements(result.flat()))
   }, []);
 
   
