@@ -112,11 +112,14 @@ def insertOntology():
         print("Status response",r)
 
 def main():
+    # to insert data got previously in the triplestore
+    # file must be runned in the very current directory
     #deleteDefaultGraph()
     insertOntology()
     insertEntries(monument_json)
     insertEntries(musee_json)
     insertEntries(station_json)
+
     #queryFromFile(queries_folder + "get-graph-names.txt")
     #monuments= queryFromFile("get-monuments.txt")
     #for i in range(10):

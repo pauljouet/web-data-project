@@ -5,14 +5,13 @@ from pathlib import Path  # Python 3.6+ only
 env_path = Path('.') / '.env'
 
 load_dotenv(dotenv_path=env_path)
-#MAPS_API_KEY=os.getenv("MAPS_API_KEY")
-MAPS_API_KEY="AIzaSyDirZ761X3x_Xpg2pGzCjIbWJ34eFpRjhM"
+MAPS_API_KEY=os.getenv("MAPS_API_KEY")
 
 # Convert string to location
 def getCoordinates(location):
     url = 'https://maps.googleapis.com/maps/api/geocode/json'
     params = {'key':MAPS_API_KEY , 'address': location}
-    print("key:", MAPS_API_KEY)
+    #print("key:", MAPS_API_KEY)
     response = requests.get(url, params=params)
     # If not sucess raise error
     if response.status_code != 200:
