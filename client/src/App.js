@@ -62,7 +62,7 @@ export default function App() {
 
   // promise.all runs the 3 fetching in parrallel to gain time
   useEffect( ()=>{
-      Promise.all([data.fetchMonument()])
+      Promise.all([data.fetchStation()])
         .then(result => setElements(result.flat()))
   }, []);
 
@@ -102,7 +102,7 @@ export default function App() {
                 <img src="/monument.svg" alt="Monument Icon" />
                  : (element.type ==="museum" ?
                  <img src="/museum.svg" alt="Museum Icon" />
-                  : <img src="/bike.svg" alt="Monument Icon" />)
+                  : <img src="/bike.svg" alt="Bike Icon" />)
               }
               
 

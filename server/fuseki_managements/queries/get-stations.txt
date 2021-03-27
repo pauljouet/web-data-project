@@ -5,7 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX ns: <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#>
 
 
-SELECT ?name ?id ?lat ?lon ?capa
+SELECT ?name ?id ?lat ?lon ?capa ?avbikes ?avdocks
 WHERE {
   ?s ns:hasName ?name .
   ?s ns:hasID ?id .
