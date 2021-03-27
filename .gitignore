@@ -1,4 +1,5 @@
 env/
 myenv/
+fuseki/
 server/fuseki_managements/.env
 project-ontology-copy.owl
