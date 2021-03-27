@@ -41,6 +41,6 @@ def monuments():
     monuments=getMonumentData()
     return jsonify(monuments)
 
-
+# must be ran from the server (current) folder
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80, debug=True)

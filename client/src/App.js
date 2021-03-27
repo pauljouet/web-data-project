@@ -62,7 +62,7 @@ export default function App() {
 
   // promise.all runs the 3 fetching in parrallel to gain time
   useEffect( ()=>{
-      Promise.all([data.fetchMonument(), data.fetchMuseum(), data.fetchStation()])
+      Promise.all([data.fetchStation()])
         .then(result => setElements(result.flat()))
   }, []);
 
@@ -84,7 +84,7 @@ export default function App() {
         mapStyle="mapbox://styles/mapbox/streets-v11"
         onViewportChange={nextViewport => setViewport(nextViewport)}
       >
-        {tqt.map(element => (
+        {elements.map(element => (
 
           <Marker
             key={element.id}
@@ -100,9 +100,9 @@ export default function App() {
             >
               {element.type ==="monument" ?
                 <img src="/monument.svg" alt="Monument Icon" />
-                 : (element.type ==="Museum" ?
+                 : (element.type ==="museum" ?
                  <img src="/museum.svg" alt="Museum Icon" />
-                  : <img src="/bike.svg" alt="Monument Icon" />)
+                  : <img src="/bike.svg" alt="Bike Icon" />)
               }
               
 
@@ -122,7 +122,7 @@ export default function App() {
               {selectedElement.type ==="monument" ?
                 <Monument
                   monument={selectedElement}
-                /> : (selectedElement.type ==="Museum" ?
+                /> : (selectedElement.type ==="museum" ?
                   <Museum museum={selectedElement} />
                   : <BikeStation station={selectedElement} />)
               }

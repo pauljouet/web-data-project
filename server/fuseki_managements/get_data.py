@@ -139,8 +139,11 @@ def mapMusees(filename):
     return good_musees
 
 if __name__ == "__main__":
-    mapMonument(monument_json)
-    mapStation(station_json)
+    # to scrap the sources, map them and store the data into json-ld files
+    # must be ran from the server directory
+    # WARNING take a long time to be computed
     mapMusees(musees_json)
+    mapMonument(monument_json)
+    mapStation(station_json) 
     pass
 

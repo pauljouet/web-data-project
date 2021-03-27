@@ -1,6 +1,7 @@
 env/
 myenv/
 fuseki/
+server/fuseki_managements/__pycache__
 server/fuseki_managements/.env
 server/fuseki_managements/__pycache__
 project-ontology-copy.owl

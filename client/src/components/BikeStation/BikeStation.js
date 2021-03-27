@@ -16,7 +16,7 @@ const BikeStation= ({station}) => (
              <h3 property="ns:hasName">🚲 {station.name}</h3>
 
             <p>
-                <li>Total bike capacity : <em property="ns:hasCapacity">{station.cap}</em></li>
+                <li>Total bike capacity : <em property="ns:hasCapacity">{station.capa}</em></li>
                 <li>Number of available bikes : <em property="ns:hasAvailableBikes">{station.avbikes}</em></li>
                 <li>Number of free slots : <em property="ns:hasAvailableDocks">{station.avdocks}</em></li>
             </p>
