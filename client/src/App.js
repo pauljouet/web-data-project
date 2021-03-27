@@ -6,49 +6,14 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { Monument, Museum, BikeStation } from './components';
 const data = require('./Data')
 
-
-
-
-
-// TODO utiliser des buildings récupérés du dataset
-
-const tqt = [{
-  id: "123",
-  type:"monument",
-  name: "Super immeuble qui tue sa mère",
-  lat: 48.850853542905114,
-  lon: 2.343891862961394,
-  city: "Paris",
-  description: "Un immeuble ultra boosté qui tue sa mère"
-}, {
-  id: "1234",
-  type:"Museum",
-  name: "Centre Pompidou",
-  lat: 48.8611698632859, 
-  lon: 2.351691564900129,
-  address: "Place George Pompidou",
-  city: "Paris",
-  description: "Centre d'art le plus iconique de la capitale",
-},
-{
-  id: "12345",
-  type:"BikeStation",
-  name: "Super station",
-  lat: 48.863358024171255, 
-  lon: 2.335523642208444,
-  city: "Paris",
-  cap:30,
-  avBikes: 13,
-  avDocks:15,
-}
-]
-
-
-// main componend
+// main component
 
 export default function App() {
 
-
+  const [elements, setElements] =  useState([]);
+  //state to keep in memory the clicked elements and change when needed
+  const [selectedElement, setSelectedElement] = useState(null);
+  const [loading, setLoading] = useState(true);
   // detail for the map component
   const [viewport, setViewport] = useState({
     width: "100vw",
@@ -58,18 +23,20 @@ export default function App() {
     zoom: 12
   });
 
-  const [elements, setElements] =  useState([]);
+  
 
   // promise.all runs the 3 fetching in parrallel to gain time
   useEffect( ()=>{
+    if(loading) {
+      console.log('loading');
       Promise.all([data.fetchStation()])
         .then(result => setElements(result.flat()))
-  }, []);
+    }
+  }, [loading]);
 
-  
-  //state to keep in memory the clicked elements and change when needed
-  const [selectedElement, setSelectedElement] = useState(null)
-
+  useEffect(() => {
+    setLoading(false);
+  }, [elements]);
 
 
   return (
@@ -81,7 +48,7 @@ export default function App() {
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-        mapStyle="mapbox://styles/mapbox/streets-v11"
+        mapStyle="mapbox://styles/mapbox/outdoors-v11"
         onViewportChange={nextViewport => setViewport(nextViewport)}
       >
         {elements.map(element => (
