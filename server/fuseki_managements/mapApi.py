@@ -2,7 +2,7 @@ import requests
 from dotenv import load_dotenv
 import os
 from pathlib import Path  # Python 3.6+ only
-env_path = Path('.') / '.env'
+env_path = 'fuseki_managements/.env'
 
 load_dotenv(dotenv_path=env_path)
 MAPS_API_KEY=os.getenv("MAPS_API_KEY")
