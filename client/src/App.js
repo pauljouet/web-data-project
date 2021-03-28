@@ -29,11 +29,9 @@ export default function App() {
   // promise.all runs the 3 fetching in parrallel to gain time
   useEffect(() => {
     if (loading) {
-      if (filter === "stations" || filter === "museums") {
         console.log('loading');
         data.fetchData(filter)
           .then(result => setElements(result.flat()))
-      } else { console.log(filter); }
     }
   }, [loading]);
 
