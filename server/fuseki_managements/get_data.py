@@ -131,9 +131,6 @@ def mapMusees(filename):
                 coord = getCoordinates(c)
                 dic['hasLatitude'] = coord[0]
                 dic['hasLongitude'] = coord[1]
-        if i in range(10):
-            print(dic)
-        good_musees.append(dic)
     data = {"@context": {"@vocab": ns}, "musees": good_musees}
     with open(filename, 'w') as outfile:
         json.dump(data, outfile) 
@@ -145,7 +142,7 @@ if __name__ == "__main__":
     # must be ran from the server directory
     # WARNING take a long time to be computed
     mapMusees(musees_json)
-    #mapMonument(monument_json)
-    #mapStation(station_json) 
+    mapMonument(monument_json)
+    mapStation(station_json) 
     pass
 
