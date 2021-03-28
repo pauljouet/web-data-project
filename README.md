@@ -30,3 +30,11 @@ So the programm is divided in several parts, each of one answer a specific part 
 - Analyse the data from our sources and design the ontology accordingly (with Protege)
 - Import the data, format it to fit in the ontology and query it (should be in real time, because of the changing bike availability)
 - Display the information through a friendly user interface
+
+
+### Demo
+
+Here is a little demo of our platform (in local use)
+
+
+![](./figures/demo.gif)
