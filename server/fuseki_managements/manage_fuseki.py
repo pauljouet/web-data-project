@@ -1,10 +1,7 @@
 #! usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from rdflib import Graph, URIRef
-import rdflib.plugin
 import requests
-from rdflib.plugins.stores import sparqlstore
 import os
 
 SERVER_URL = "http://localhost:3030"
