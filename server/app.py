@@ -41,6 +41,22 @@ def monuments():
     monuments=getMonumentData()
     return jsonify(monuments)
 
+
+@app.route('/api/getdata', methods=['GET'])
+def getData():
+    # functionGetStation returns the structured array of stations from triplestor
+    filter=request.args.get('filter', 'stations')
+    data={}
+    if filter == 'stations':
+        data=getStationsData()
+    elif filter == 'museums':
+        data=getMuseumData()
+    elif filter == 'monuments':
+        data=getMonumentData()
+    else :
+        data={'error': 'could not find ressource : {}'.format(filter)}
+    return jsonify(data)
+
 # must be ran from the server (current) folder
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80, debug=True)
