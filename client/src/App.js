@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { Monument, Museum, BikeStation, FilterButtons } from './components';
-const data = require('./Data')
+const data= require('./Data');
 
 // main component
 
@@ -14,7 +14,7 @@ export default function App() {
   //state to keep in memory the clicked elements and change when needed
   const [selectedElement, setSelectedElement] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [filters, setFilters] = useState("Stations");
+  const [filter, setFilter] = useState("stations");
   // detail for the map component
   const [viewport, setViewport] = useState({
     width: "100vw",
@@ -29,11 +29,11 @@ export default function App() {
   // promise.all runs the 3 fetching in parrallel to gain time
   useEffect(() => {
     if (loading) {
-      if (filters === "Stations") {
+      if (filter === "stations" || filter === "museums") {
         console.log('loading');
-        Promise.all([data.fetchStation()])
+        data.fetchData(filter)
           .then(result => setElements(result.flat()))
-      } else { console.log(filters); }
+      } else { console.log(filter); }
     }
   }, [loading]);
 
@@ -43,11 +43,11 @@ export default function App() {
 
   useEffect(() => {
     setLoading(true);
-  }, [filters]);
+  }, [filter]);
 
   const clickFilters = (event) => {
     const Filter = event.target.name;
-    setFilters(Filter);
+    setFilter(Filter.toLowerCase());
   }
 
 
