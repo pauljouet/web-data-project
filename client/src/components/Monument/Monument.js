@@ -9,7 +9,7 @@ const Monument= ({monument}) => (
         <span >     
              <h3 property="ns:hasName">🗽 {monument.name}</h3>        
             <p property="ns:hasDescription">
-                {monument.descr}
+                {monument.desc}
             </p>
             <p property="ns:hasCity">
                 <em>{monument.city}</em>

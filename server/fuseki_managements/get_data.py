@@ -5,7 +5,7 @@ import json
 import requests
 import os
 import pandas as pd
-from fuseki_managements.mapApi import getCoordinates
+from mapApi import getCoordinates
 
 ns = "http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#"
 url_velib1 = "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/station_information.json"
@@ -108,6 +108,7 @@ def mapMusees(filename):
         Creates a JSON-LD file in the datasets folder with the infos on the museums and returns a list of museums
     """
     data = pd.read_excel(url_musees) 
+    data = data.fillna("Information not available")
     #print(data.head())
     good_musees=[]
     length = int(data.shape[0])
@@ -126,12 +127,10 @@ def mapMusees(filename):
                 dic['hasAddress'] = c
                 dic['hasName'] = data.iloc[i][5]
                 dic['hasID'] = data.iloc[i][4]
-                dic['hasWebsite'] = data.iloc[i][9]
+                dic['hasWebsite'] = data.iloc[i][11]
                 coord = getCoordinates(c)
                 dic['hasLatitude'] = coord[0]
                 dic['hasLongitude'] = coord[1]
-
-        good_musees.append(dic)
     data = {"@context": {"@vocab": ns}, "musees": good_musees}
     with open(filename, 'w') as outfile:
         json.dump(data, outfile) 
