@@ -9,7 +9,7 @@ Made by [Florent Drilhon](https://github.com/florentdrilhon), [Paul Jouët](http
 -  [Overview](#-overview)
 - 👀 [Project Demo](#-demo)
 - 📝 [Installation Guide](#-how-to-install)
-- 🛠 [Project construction](#-explanations)
+- 🛠 [Project construction](#-construction)
 
 
 
@@ -26,7 +26,7 @@ The goal is to create a web app that can be used for green touristic tour in Par
 We chose to focus our application on Paris, to be able to do so we used queries on our collected and pre-precessed data.
 
 
-### Demo
+## Demo
 
 Here is a little demo of our platform (in local use)
 
@@ -34,17 +34,55 @@ Here is a little demo of our platform (in local use)
 ![](./figures/demo.gif)
 
 
-
 ### How to install
 
+In order to run our web application, you need:
+
+- the fuseki server
+- the flask server
+- the client
+
+#### Install packages
+
+The first step will be to setup the environment. The packages needed are the python modules listed in the server/requirements.txt file, and the npm packages for React.
+
+The install-packages.bat script will take care of setting up an environment using venv if it does not exist, and install all requirements (might take some time as there are a lot of heavy packages with React). If you want to do it by hand:
+
+```batch
+pip install -r server\requirements.txt
+```
+for the python packages, and
+```batch
+cd client
+npm install
+```
+for the react packages.
+
+#### Setup Triplestore
+
+We use Apache Fuseki as our triplestore. To download it, create the database and populate it, you can simply run the setup-fuseki.bat script (~5-6min). If there is an issue however, what it does is to:
+
+- Download Fuseki using [this link](https://miroir.univ-lorraine.fr/apache/jena/binaries/apache-jena-fuseki-3.17.0.zip)
+- Unzip the file and replace the shiro.ini file with the one in the root of our repo
+- Start the server by running fuseki-server.bat
+- Populate the database with populate-db.py using the pre-generated JSON-LD files
+
+#### Launch the Web-App
+
+Again, you can launch the webapp by running the start.bat script. You need to make sure that *there is no server running already* (if you ran setup-fuseki.bat before, the Fuseki Server might still be).
+
+To do it by hand:
+
+1) Run fuseki-server.bat
+2) Run the app.py script into the server folder
+3) Run npm start into the client folder
+
+#### Success
+
+You can now use the webapp !
 
 
-### How to run
-
-
-
-
-## Explanations
+## Construction
 
 ### How to collect information
 
