@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./FilterButtons.css";
 
 const FilterButtons = ({ buttons, doSomethingAfterClick }) => {
-  const [clickedId, setClickedId] = useState(-1);
+  const [clickedId, setClickedId] = useState(0);
 
   const handleClick = (event, id) => {
     setClickedId(id);
