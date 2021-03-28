@@ -13,5 +13,5 @@ WHERE {
     ?m ns:hasDescription ?desc .
     ?m ns:hasLatitude ?lat .
     ?m ns:hasLongitude ?lon .
-    FILTER (?lat < 49.0 && ?lat > 48.77 && lon < 2.6 && lon > 2.1)
+    FILTER (?lat < 49.0 && ?lat > 48.77 && ?lon < 2.6 && ?lon > 2.1)
 }
