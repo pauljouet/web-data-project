@@ -6,15 +6,15 @@
 # must use the biek station APIs to get real time data
 
 
-from fuseki_managements.manage_fuseki import deleteDefaultGraph, insertOntology, insertEntries, queryFromFile
-from fuseki_managements.get_data import mapStation
+from manage_fuseki import deleteDefaultGraph, insertOntology, insertEntries, queryFromFile
+from get_data import mapStation
 import os
 import requests
 
 HEADERS_UPDATE = {'Content-type': 'application/sparql-update'}
-DATASET_URL = "http://localhost:3030/webdata-project-kb"
+DATASET_URL = "http://localhost:3030/webdata-project-kb/update"
 
-storeFile1 = os.path.join(os.path.dirname(__file__), "./datasets/station-info.jsonld")
+storeFile1 = os.path.join(os.path.dirname(__file__), "./datasets/stations.jsonld")
 queryfile="query-bike.txt"
 
 
@@ -69,29 +69,25 @@ def deleteStationsQuery():
     """
     deleteStations = """
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        PREFIX ns: <http://http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#>
-        DELETE
+        PREFIX ns: <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#>
+        DELETE WHERE
         {
-            ?s ns:hasName ?name .
-            ?s ns:hasID ?id .
-            ?s ns:hasLatitude ?lat .
-            ?s ns:hasLongitude ?lon .
             ?s ns:hasCapacity ?capa .
-            ?s ns:hasAvailableBikes ?avbikes .
-            ?s ns:hasAvailableDocks ?avdocks .
-        }
-        WHERE
-        {
-            ?s ns:hasName ?name .
-            ?s ns:hasID ?id .
-            ?s ns:hasLatitude ?lat .
-            ?s ns:hasLongitude ?lon .
-            ?s ns:hasCapacity ?capa .
-            ?s ns:hasAvailableBikes ?avbikes .
-            ?s ns:hasAvailableDocks ?avdocks .
         }
     """
     return deleteStations
+
+def deleteStations():
+    rep = requests.post(DATASET_URL, data=deleteStationsQuery(), headers=HEADERS_UPDATE)
+    if rep.status_code != 204:
+        rep.raise_for_status()
+    return rep
+
+def updateStations():
+    deleteStations()
+    mapStation(storeFile1)
+    insertEntries(storeFile1)
+
 
 # format stations data gotten from triplestore
 def formatData(data):
@@ -111,8 +107,7 @@ def getStationsData():
     return stations
 
 if __name__ == "__main__":
-    #updateStationsData()
-    pass
+    updateStations()
 
 
 

@@ -13,89 +13,89 @@
 #################################################################
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasAdress
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasAdress> rdf:type owl:DatatypeProperty ;
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasAdress> rdf:type owl:DatatypeProperty ;
                                                                                       rdfs:subPropertyOf owl:topDataProperty ;
                                                                                       rdf:type owl:FunctionalProperty ;
-                                                                                      rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###VisitPlace> ;
+                                                                                      rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#VisitPlace> ;
                                                                                       rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasAvailableBikes
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasAvailableBikes> rdf:type owl:DatatypeProperty ;
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasAvailableBikes> rdf:type owl:DatatypeProperty ;
                                                                                               rdfs:subPropertyOf owl:topDataProperty ;
                                                                                               rdf:type owl:FunctionalProperty ;
-                                                                                              rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###BikeStation> ;
+                                                                                              rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#BikeStation> ;
                                                                                               rdfs:range xsd:int .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasAvailableDocks
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasAvailableDocks> rdf:type owl:DatatypeProperty ;
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasAvailableDocks> rdf:type owl:DatatypeProperty ;
                                                                                               rdfs:subPropertyOf owl:topDataProperty ;
                                                                                               rdf:type owl:FunctionalProperty ;
-                                                                                              rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###BikeStation> ;
+                                                                                              rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#BikeStation> ;
                                                                                               rdfs:range xsd:int .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasCapacity
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasCapacity> rdf:type owl:DatatypeProperty ;
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasCapacity> rdf:type owl:DatatypeProperty ;
                                                                                         rdfs:subPropertyOf owl:topDataProperty ;
                                                                                         rdf:type owl:FunctionalProperty ;
-                                                                                        rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###BikeStation> ;
+                                                                                        rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#BikeStation> ;
                                                                                         rdfs:range xsd:int .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasCity
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasCity> rdf:type owl:DatatypeProperty ,
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasCity> rdf:type owl:DatatypeProperty ,
                                                                                              owl:FunctionalProperty ;
-                                                                                    rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###VisitPlace> ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#VisitPlace> ;
                                                                                     rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasDescription
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasDescription> rdf:type owl:DatatypeProperty ;
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasDescription> rdf:type owl:DatatypeProperty ;
                                                                                            rdfs:subPropertyOf owl:topDataProperty ;
                                                                                            rdf:type owl:FunctionalProperty ;
-                                                                                           rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###VisitPlace> ;
+                                                                                           rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#VisitPlace> ;
                                                                                            rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasID
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasID> rdf:type owl:DatatypeProperty ;
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasID> rdf:type owl:DatatypeProperty ;
                                                                                   rdfs:subPropertyOf owl:topDataProperty ;
                                                                                   rdf:type owl:FunctionalProperty ;
-                                                                                  rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Place> ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#Place> ;
                                                                                   rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasLatitude
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasLatitude> rdf:type owl:DatatypeProperty ;
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasLatitude> rdf:type owl:DatatypeProperty ;
                                                                                         rdfs:subPropertyOf owl:topDataProperty ;
                                                                                         rdf:type owl:FunctionalProperty ;
-                                                                                        rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Place> ;
+                                                                                        rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#Place> ;
                                                                                         rdfs:range xsd:double .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasLongitude
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasLongitude> rdf:type owl:DatatypeProperty ;
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasLongitude> rdf:type owl:DatatypeProperty ;
                                                                                          rdfs:subPropertyOf owl:topDataProperty ;
                                                                                          rdf:type owl:FunctionalProperty ;
-                                                                                         rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Place> ;
+                                                                                         rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#Place> ;
                                                                                          rdfs:range xsd:double .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasName
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasName> rdf:type owl:DatatypeProperty ;
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasName> rdf:type owl:DatatypeProperty ;
                                                                                     rdfs:subPropertyOf owl:topDataProperty ;
                                                                                     rdf:type owl:FunctionalProperty ;
-                                                                                    rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Place> ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#Place> ;
                                                                                     rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasWebsite
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasWebsite> rdf:type owl:DatatypeProperty ;
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasWebsite> rdf:type owl:DatatypeProperty ;
                                                                                        rdfs:subPropertyOf owl:topDataProperty ;
                                                                                        rdf:type owl:FunctionalProperty ;
-                                                                                       rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Museum> ;
+                                                                                       rdfs:domain <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#Museum> ;
                                                                                        rdfs:range xsd:string .
 
 
@@ -104,136 +104,82 @@
 #################################################################
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###BikeStation
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###BikeStation> rdf:type owl:Class ;
-                                                                                        rdfs:subClassOf <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Station> ,
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#BikeStation> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#Station> ,
                                                                                                         [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasAvailableBikes> ;
+                                                                                                          owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasAvailableBikes> ;
                                                                                                           owl:someValuesFrom xsd:int
                                                                                                         ] ,
                                                                                                         [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasAvailableDocks> ;
+                                                                                                          owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasAvailableDocks> ;
                                                                                                           owl:someValuesFrom xsd:int
                                                                                                         ] ,
                                                                                                         [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasCapacity> ;
+                                                                                                          owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasCapacity> ;
                                                                                                           owl:someValuesFrom xsd:int
                                                                                                         ] .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###HistoricMonument
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###HistoricMonument> rdf:type owl:Class ;
-                                                                                             rdfs:subClassOf <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###VisitPlace> ;
-                                                                                             owl:disjointWith <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Museum> .
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#HistoricMonument> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#VisitPlace> ;
+                                                                                             owl:disjointWith <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#Museum> .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Museum
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Museum> rdf:type owl:Class ;
-                                                                                   rdfs:subClassOf <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###VisitPlace> ,
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#Museum> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#VisitPlace> ,
                                                                                                    [ rdf:type owl:Restriction ;
-                                                                                                     owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasWebsite> ;
+                                                                                                     owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasWebsite> ;
                                                                                                      owl:someValuesFrom xsd:string
                                                                                                    ] .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Place
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Place> rdf:type owl:Class ;
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#Place> rdf:type owl:Class ;
                                                                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                                    owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasID> ;
+                                                                                                    owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasID> ;
                                                                                                     owl:someValuesFrom xsd:string
                                                                                                   ] ,
                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                    owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasName> ;
+                                                                                                    owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasName> ;
                                                                                                     owl:someValuesFrom xsd:string
                                                                                                   ] ,
                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                    owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasLatitude> ;
+                                                                                                    owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasLatitude> ;
                                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                                                     owl:onDataRange xsd:double
                                                                                                   ] ,
                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                    owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasLongitude> ;
+                                                                                                    owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasLongitude> ;
                                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                                                     owl:onDataRange xsd:double
                                                                                                   ] ;
-                                                                                  owl:hasKey ( <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasID>
+                                                                                  owl:hasKey ( <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasID>
                                                                                              ) .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Station
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Station> rdf:type owl:Class ;
-                                                                                    rdfs:subClassOf <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Place> ;
-                                                                                    owl:disjointWith <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###VisitPlace> .
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#Station> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#Place> ;
+                                                                                    owl:disjointWith <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#VisitPlace> .
 
 
 ###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###VisitPlace
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###VisitPlace> rdf:type owl:Class ;
-                                                                                       rdfs:subClassOf <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Place> ,
+<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#VisitPlace> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#Place> ,
                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                         owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasAdress> ;
+                                                                                                         owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasAdress> ;
                                                                                                          owl:someValuesFrom xsd:string
                                                                                                        ] ,
                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                         owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasCity> ;
+                                                                                                         owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasCity> ;
                                                                                                          owl:someValuesFrom xsd:string
                                                                                                        ] ,
                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                         owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasDescription> ;
+                                                                                                         owl:onProperty <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#hasDescription> ;
                                                                                                          owl:someValuesFrom xsd:string
                                                                                                        ] .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###monument1
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###monument1> rdf:type owl:NamedIndividual ;
-                                                                                      <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasAdress> "Blomac" ;
-                                                                                      <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasDescription> "Eglise mentionnée en 1251. Elle était à la collation de l'évêque de Carcassonne. Elle se compose d'une abside demi-circulaire (11e ou début du 12e siècle), d'un choeur voûté (12e siècle) accosté de chapelles à berceaux transversaux (fin 12e - début 13e siècle), d'une nef à quatre travées non voûtées (12e-début 13e siècle) et d'un clocher-mur sur la façade occidentale. A l'extérieur, le pourtour de l'abside est décoré d'arcatures groupées par séries de deux arcs. Ces groupes sont séparés et supportés par des lesennes. Les trois fenêtres absidiales primitives ont été modifiées et agrandies, mais les traces en sont visibles (arcatures de type lombard doubles). En 1891, la porte d'entrée fut déplacée et mise sur la dernière travée. Elle devait à l'origine se trouver au nord." ;
-                                                                                      <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasID> "PA00102569" ;
-                                                                                      <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasLatitude> "43.211552"^^xsd:double ;
-                                                                                      <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasLongitude> "2.592592"^^xsd:double ;
-                                                                                      <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasName> "Eglise Saint-Etienne" .
-
-
-###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###museum1
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###museum1> rdf:type owl:NamedIndividual ,
-                                                                                             <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Museum> ;
-                                                                                    <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasCity> "PARIS"^^xsd:string ;
-                                                                                    <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasID> "19223030"^^xsd:string ;
-                                                                                    <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasName> "Fake Museum Paris 1"^^xsd:string .
-
-
-###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###museum2
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###museum2> rdf:type owl:NamedIndividual ,
-                                                                                             <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###Museum> ;
-                                                                                    <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasCity> "NANTERRE"^^xsd:string ;
-                                                                                    <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasID> "19293930"^^xsd:string ;
-                                                                                    <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasName> "Fake Museum Nanterre"^^xsd:string .
-
-
-###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###station1
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###station1> rdf:type owl:NamedIndividual ;
-                                                                                     <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasAvailableBikes> "49"^^xsd:int ;
-                                                                                     <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasCapacity> "55"^^xsd:int ;
-                                                                                     <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasID> "99950133" ;
-                                                                                     <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasLatitude> "48.85375581057431"^^xsd:double ;
-                                                                                     <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasLongitude> "2.3390958085656166"^^xsd:double ;
-                                                                                     <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasName> "André Mazet - Saint-André des Arts" .
-
-
-###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###station2
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###station2> rdf:type owl:NamedIndividual ;
-                                                                                     <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasCapacity> "21"^^xsd:int ;
-                                                                                     <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasID> "36255" ;
-                                                                                     <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasLatitude> "48.87929591733507"^^xsd:double ;
-                                                                                     <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasLongitude> "2.3373600840568547"^^xsd:double ;
-                                                                                     <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasName> "Toudouze - Clauzel" .
-
-
-###  http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###station3
-<http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###station3> rdf:type owl:NamedIndividual ;
-                                                                                     <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project###hasID> "99950133" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
