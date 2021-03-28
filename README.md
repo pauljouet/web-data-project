@@ -69,13 +69,6 @@ We use Apache Fuseki as our triplestore. To download it, create the database and
 - Start the server by running fuseki-server.bat
 - Populate the database with populate-db.py using the pre-generated JSON-LD files
 
-#### Place the environnements file
-
-In order to integrate a map in our webapp and to get GPS coordinates from a given address, we used 2 different APIs and the associated token keys must be provided to run the app. To do so you must provide :
-
-- a [google maps API](https://developers.google.com/maps/documentation/geocoding/overview) key in a ".env" file placed in server/fuseki_mangements folder
-- a [Mapbox api](https://www.mapbox.com/maps/) key in a ".env.local" file place in client/ folder
-
 #### Launch the Web-App
 
 Again, you can launch the webapp by running the start.bat script. You need to make sure that *there is no server running already* (if you ran setup-fuseki.bat before, the Fuseki Server might still be).
@@ -110,21 +103,21 @@ for station_id, hasLatitude, hasLongitude, hasName and hasCapacity : https://vel
 - museums dataset : https://www.data.gouv.fr/fr/datasets/liste-et-localisation-des-musees-de-france/
 
 
-Once the data collected from these sources the first thing to do is to pre-process it in order to have only the needed informations. To do so the file server/fuseki_managements/get_data.py use python to create a mapping from the data collected and store them into JSON LD files by adding our onlogy as context.
+Once the data is collected from these sources the first thing to do is to pre-process it in order to have only the needed information. To do so, the file server/fuseki_managements/get_data.py use python to create a mapping from the data collected and store it into JSON-LD files by adding our onlogy as context.
 
-For the ontology, we created from scratch our own onlogy with protégé, here is a little overview : 
+We created from scratch our own onlogy with Protégé, here is a little overview : 
 
 ![](./figures/owl-viz-onto.PNG)
 
-Once it’s done we had to format it into JSON LD to push it into the knowledge database of fuseki.
+Once done we saved it into a Turtle file to upload it into the knowledge base of fuseki.
 
 
 #### Triplestore management
 
 
-Once the data is inserted into the triplestore (fuseki), we had to define differents protocol to manage the data in the knowledge base. The file server/fuseki_managements/manage_fuseki.py connect to the triplestore and gather all useful functions to insert a JSON file or to make a query from a text file.
+Once the data is inserted into the triplestore (fuseki), we had to define different protocols to manage the data in the knowledge base. The file server/fuseki_managements/manage_fuseki.py provides utility methods to connect to the triplestore, insert a JSON file or to make a query from a text file.
 
-The functions defined in this file are used first to insert the JSON files into the database from the populate-db.py, and then to get the data of different types of ressources. To differentiate each type, we created respectively the files museum.py monument.py and bikeStation.py in folder server/fuseki_managements/ to differentiate the functions related to each ressource.
+The functions defined in this file are used first to insert the JSON files into the database from the populate-db.py, and then to get the data of different types of ressources. To differentiate each type, we created respectively the files museum.py monument.py and bikeStation.py in the server/fuseki_managements/ folder to differentiate the methods related to each ressource.
 
 As the bikeStations are realtime data, we created an additionnal function for this ressource to update the wanted data before displaying it.
 
