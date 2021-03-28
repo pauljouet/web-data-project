@@ -6,6 +6,8 @@
 Made by [Florent Drilhon](https://github.com/florentdrilhon), [Paul Jouët](https://github.com/pauljouet) and [Aladin Homsy](https://github.com/aladeen57)
 
 
+## Summary
+
 -  [Overview](#-overview)
 - 👀 [Project Demo](#-demo)
 - 📝 [Installation Guide](#-how-to-install)
