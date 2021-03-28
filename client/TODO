@@ -1,6 +1,3 @@
-
-- fix API to include filters in one endpoint
-
 - render other elements in function of the filters
 
 - improve A LOT the style of new buttons
