@@ -36,7 +36,7 @@ Here is a little demo of our platform (in local use)
 ![](./figures/demo.gif)
 
 
-### How to install
+## How to install
 
 In order to run our web application, you need:
 
@@ -86,7 +86,7 @@ You can now use the webapp !
 
 ## Construction
 
-### How to collect information
+#### How to collect information
 
 The information we need from the opensource databases are:
 
@@ -112,7 +112,7 @@ For the ontology, we created from scratch our own onlogy with protégé, here is
 Once it’s done we had to format it into JSON LD to push it into the knowledge database of fuseki.
 
 
-### Triplestore management
+#### Triplestore management
 
 
 Once the data is inserted into the triplestore (fuseki), we had to define differents protocol to manage the data in the knowledge base. The file server/fuseki_managements/manage_fuseki.py connect to the triplestore and gather all useful functions to insert a JSON file or to make a query from a text file.
@@ -123,7 +123,7 @@ As the bikeStations are realtime data, we created an additionnal function for th
 
 The functions defined for each ressource are then gathered in the server/app.py file which is a REST-based API to communicate with the client.
 
-### Display the content
+#### Display the content
 
 To display the content we chose to build a react APP in order to integrate a map to render the different GPS values. 
 
