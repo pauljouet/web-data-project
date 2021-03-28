@@ -5,7 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX ns: <http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#>
 
 
-SELECT ?city ?name ?id ?desc ?lat ?lon
+SELECT ?city ?name ?id ?desc ?lat ?lon ?website
 WHERE {
     ?m ns:hasCity ?city .
     ?m ns:hasName ?name .
@@ -13,5 +13,6 @@ WHERE {
     ?m ns:hasDescription ?desc .
     ?m ns:hasLatitude ?lat .
     ?m ns:hasLongitude ?lon .
-    FILTER (?lat < 49.0 && ?lat > 48.77 && ?lon < 2.6 && ?lon > 2.1)
+    ?m ns:hasWebsite ?website .
+    FILTER (?lat < 49.0 && ?lat > 48.77 && ?lon < 2.6 && ?lon > 2.1 && !(CONTAINS(?name, "Immeuble")))
 }

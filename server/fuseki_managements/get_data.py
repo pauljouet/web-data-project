@@ -126,7 +126,7 @@ def mapMusees(filename):
                 dic['hasAddress'] = c
                 dic['hasName'] = data.iloc[i][5]
                 dic['hasID'] = data.iloc[i][4]
-                
+                dic['hasWebsite'] = data.iloc[i][9]
                 coord = getCoordinates(c)
                 dic['hasLatitude'] = coord[0]
                 dic['hasLongitude'] = coord[1]
