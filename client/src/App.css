@@ -16,22 +16,22 @@
 }
 
 .App-header {
-  background-color: #263d36;
-  min-height: 8vh;
+  background: linear-gradient(#fdfcfb, #e2d1c3);
+  min-height: 6vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family:"Roboto", "Helvetica", "Arial", sans-serif ;
-  line-height: 2.0;
-  color: white;
+  line-height: 1.5;
+  color: #244d40;
   
 }
 
 .App-header h1 {
 
-  font-weight: normal;
-  font-size: calc(8px + 2vmin);
+  font-weight: lighter;
+  font-size: calc(10px + 3vmin);
 }
 
 
@@ -39,6 +39,18 @@
   color: #61dafb;
 }
 
+
+.Filters {
+  display: flex;
+  justify-content: center;
+  margin:8px;
+}
+
+.Filters button {
+  font-family:"Roboto", "Helvetica", "Arial", sans-serif ;
+  font-weight: lighter;
+  font-size: calc(5px + 2vmin);
+}
 
 @keyframes App-logo-spin {
   from {

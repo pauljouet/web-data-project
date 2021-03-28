@@ -1,8 +1,10 @@
+- update in real time station data Paul
 
-- fix API to include filters in one endpoint
+- add websites and phone number in museums Aladin
 
-- render other elements in function of the filters
+- remove monument Immeuble Paul
 
-- improve A LOT the style of new buttons
+- add a loading animation FLorent 
 
-- find a way to return only elements in Paris (for museum and monuments)
+- Bonus fichier qui lance/ installe tout
+
