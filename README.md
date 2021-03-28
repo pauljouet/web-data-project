@@ -69,6 +69,13 @@ We use Apache Fuseki as our triplestore. To download it, create the database and
 - Start the server by running fuseki-server.bat
 - Populate the database with populate-db.py using the pre-generated JSON-LD files
 
+#### Place the environnements file
+
+In order to integrate a map in our webapp and to get GPS coordinates from a given address, we used 2 different APIs and the associated token keys must be provided to run the app. To do so you must provide :
+
+- a [google maps API](https://developers.google.com/maps/documentation/geocoding/overview) key in a ".env" file placed in server/fuseki_mangements folder
+- a [Mapbox api](https://www.mapbox.com/maps/) key in a ".env.local" file place in client/ folder
+
 #### Launch the Web-App
 
 Again, you can launch the webapp by running the start.bat script. You need to make sure that *there is no server running already* (if you ran setup-fuseki.bat before, the Fuseki Server might still be).
