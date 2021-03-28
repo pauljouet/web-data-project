@@ -5,7 +5,7 @@ from fuseki_managements.get_data import mapMonument
 import os
 
 
-queryfile='get-monuments.txt'
+queryfile='get-paris-monuments.txt'
 storefile=os.path.join(os.path.dirname(__file__), "./datasets/monuments.jsonld")
 
 def insertMonuments():
@@ -27,5 +27,3 @@ def getMonumentData():
     for monument in monuments:
         monument=formatData(monument)
     return monuments
-
-
