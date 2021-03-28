@@ -16,7 +16,7 @@ const Museum= ({museum}) => (
              <h3 property="ns:hasName">🏛 {museum.name}</h3>
             
             <p>
-                Website : <a href={museum.wb} property="ns:hasWebsite" >{museum.wb}</a>
+                Website : <a href={museum.wb} property="ns:hasWebsite" class="App-link">{museum.wb}</a>
             </p>
             <p>
                 Adresse : <em property="ns: hasAdress">{museum.address}</em>,
