@@ -1,9 +1,8 @@
 
+- fix API to include filters in one endpoint
 
-define a cool style for the components with CSS (done but can always be improved)
+- render other elements in function of the filters
 
+- improve A LOT the style of new buttons
 
-V2 :
-
-- add a menu with a search bar
-- add the list of each element in the menu
+- find a way to return only elements in Paris (for museum and monuments)
