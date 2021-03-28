@@ -3,10 +3,18 @@ import './App.css';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+import { css } from "@emotion/core";
 import { Monument, Museum, BikeStation, FilterButtons } from './components';
-const data= require('./Data');
+import HashLoader from 'react-spinners/HashLoader';
+const data = require('./Data');
 
 // main component
+
+const override = css`
+  position: absolute ;
+  left:50%;
+  top:50%;
+`;
 
 export default function App() {
 
@@ -29,9 +37,9 @@ export default function App() {
   // promise.all runs the 3 fetching in parrallel to gain time
   useEffect(() => {
     if (loading) {
-        console.log('loading');
-        data.fetchData(filter)
-          .then(result => setElements(result.flat()))
+      console.log('loading');
+      data.fetchData(filter)
+        .then(result => setElements(result.flat()))
     }
   }, [loading]);
 
@@ -54,12 +62,14 @@ export default function App() {
       <div className="App-header">
         <h1>🚴‍♂️ Bike Touristic Tour 🚴‍♀️</h1>
         <div className="Filters">
-        <FilterButtons
-          buttons={["Stations", "Monuments", "Museums"]}
-          doSomethingAfterClick={clickFilters}
-        />
+          <FilterButtons
+            buttons={["Stations", "Monuments", "Museums"]}
+            doSomethingAfterClick={clickFilters}
+          />
+        </div>
       </div>
-      </div>
+      {loading ? <HashLoader className="Spinner" color = "#244d40" css={override}/>
+      :
       <div>
         <ReactMapGL
           {...viewport}
@@ -115,8 +125,8 @@ export default function App() {
           ) : null}
 
         </ReactMapGL>
-
       </div>
+    }
     </div>
   );
 }
