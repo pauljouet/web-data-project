@@ -5,7 +5,7 @@ import json
 import requests
 import os
 import pandas as pd
-from mapApi import getCoordinates
+from fuseki_managements.mapApi import getCoordinates
 
 ns = "http://www.semanticweb.org/pauljouet/ontologies/2021/2/web-data-project#"
 url_velib1 = "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/station_information.json"
