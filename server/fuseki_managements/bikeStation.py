@@ -6,8 +6,8 @@
 # must use the biek station APIs to get real time data
 
 
-from manage_fuseki import deleteDefaultGraph, insertOntology, insertEntries, queryFromFile
-from get_data import mapStation
+from fuseki_managements.manage_fuseki import deleteDefaultGraph, insertOntology, insertEntries, queryFromFile
+from fuseki_managements.get_data import mapStation
 import os
 import requests
 
